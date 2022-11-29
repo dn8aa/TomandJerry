@@ -10,6 +10,8 @@ import NotFoundPage from "../pages/NotFoundPage";
 import ProductsDetailsPage from "../pages/ProductsDetailsPage";
 import ProductsPage from "../pages/ProductsPage";
 import { Route, Routes, Navigate } from "react-router-dom";
+import WishList from "../components/WishList/WishList";
+import WIshListPage from "../pages/WIshListPage";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -22,6 +24,7 @@ const MainRoutes = () => {
     { link: "/edit/:id", element: <EditProductPage />, id: 8 },
     { link: "/admin", element: <AdminPage />, id: 9 },
     { link: "/aboutus", element: <AboutUsPage />, id: 10 },
+    { link: "/wishlist", element: <WIshListPage />, id: 11 },
   ];
   return (
     <>
@@ -35,5 +38,3 @@ const MainRoutes = () => {
 };
 
 export default MainRoutes;
-
-

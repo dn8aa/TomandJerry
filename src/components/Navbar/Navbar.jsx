@@ -16,7 +16,6 @@ import Button from "@mui/material/Button";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
-import { Badge, FavoriteOutlined } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 
 const drawerWidth = 240;
@@ -33,26 +32,36 @@ function Navbar(props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
       <Typography
+        onClick={() => navigate("/")}
         variant="h6"
-        sx={{ my: 2, fontWeight: 700, fontSize: "30px" }}
+        sx={{ my: 2, fontWeight: 700, fontSize: "30px", cursor: "pointer" }}
       >
         FARFETCH
       </Typography>
       <Divider />
       <List>
         <ListItem disablePadding>
-          <ListItemButton  onClick={() => navigate("/products")} sx={{ textAlign: "center" }}>
+          <ListItemButton
+            onClick={() => navigate("/products")}
+            sx={{ textAlign: "center" }}
+          >
             <ListItemText primary="PRODUCTS" />
           </ListItemButton>
         </ListItem>
         <ListItem>
-          <ListItemButton onClick={() => navigate("/admin")} sx={{ textAlign: "center" }}>
+          <ListItemButton
+            onClick={() => navigate("/admin")}
+            sx={{ textAlign: "center" }}
+          >
             <ListItemText primary="ADMIN" />
           </ListItemButton>
         </ListItem>
         <ListItem>
           {" "}
-          <ListItemButton onClick={() => navigate("/aboutus")} sx={{ textAlign: "center" }}>
+          <ListItemButton
+            onClick={() => navigate("/aboutus")}
+            sx={{ textAlign: "center" }}
+          >
             <ListItemText primary="ABOUT US" />
           </ListItemButton>
         </ListItem>
@@ -73,16 +82,19 @@ function Navbar(props) {
           <Box sx={{ width: "33%", display: { xs: "none", sm: "block" } }}>
             <Button
               onClick={() => navigate("/products")}
-              sx={{ color: "black" }}
+              sx={{ p: { xs: 0,lg: 2 }, color: "black" }}
             >
               PRODUCTS
             </Button>{" "}
-            <Button onClick={() => navigate("/admin")} sx={{ color: "black" }}>
+            <Button
+              onClick={() => navigate("/admin")}
+              sx={{ p: { xs: 0,lg: 2 }, color: "black" }}
+            >
               ADMIN
             </Button>{" "}
             <Button
               onClick={() => navigate("/aboutus")}
-              sx={{ color: "black" }}
+              sx={{ p: { xs: 0,lg: 2 }, color: "black" }}
             >
               ABOUT US
             </Button>
@@ -97,9 +109,11 @@ function Navbar(props) {
             <MenuIcon />
           </IconButton>
           <Typography
+            onClick={() => navigate("/")}
             variant="h6"
             component="div"
             sx={{
+              cursor: "pointer",
               width: "33%",
               textAlign: "center",
               flexGrow: 1,
@@ -110,19 +124,42 @@ function Navbar(props) {
           >
             FARFETCH
           </Typography>
+          <Typography
+            onClick={() => navigate("/")}
+            variant="h6"
+            sx={{
+              display: { xs: "block", sm: "none" },
+              width: "50%",
+              my: 2,
+              fontWeight: 700,
+              fontSize: "30px",
+              cursor: "pointer",
+            }}
+          >
+            FARFETCH
+          </Typography>
           <Box
             sx={{
-              width: { xs: "100%", sm: "33%" },
+              width: { xs: "50%", sm: "33%" },
               display: "flex",
               justifyContent: "right",
               alignItems: "center",
               paddingRight: 2,
             }}
           >
-            <PersonOutlineOutlinedIcon sx={{ m: 1 }} />
+            <PersonOutlineOutlinedIcon
+              onClick={() => navigate("/auth")}
+              sx={{ m: 1, cursor: "pointer" }}
+            />
 
-            <FavoriteBorderOutlinedIcon sx={{ m: 1 }} />
-            <LocalMallOutlinedIcon sx={{ m: 1 }} />
+            <FavoriteBorderOutlinedIcon
+              onClick={() => navigate("/wishlist")}
+              sx={{ m: 1, cursor: "pointer" }}
+            />
+            <LocalMallOutlinedIcon
+              onClick={() => navigate("/cart")}
+              sx={{ m: 1, cursor: "pointer" }}
+            />
           </Box>
         </Toolbar>
       </AppBar>
