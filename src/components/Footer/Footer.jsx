@@ -7,11 +7,6 @@ import PinterestIcon from "@mui/icons-material/Pinterest";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 
 const Footer = () => {
-<<<<<<< HEAD
-    return (
-        <div>
-            <h1>footer</h1>
-=======
   return (
     <div className="footer">
       <div className="the_left_footer">
@@ -51,7 +46,6 @@ const Footer = () => {
               <YouTubeIcon sx={{ fill: "white" }} />
             </a>
           </>
->>>>>>> e83b6321e70e5fd9c26c9f1de20b5320dcf4ec4d
         </div>
       </div>
       <div className="the_right_footer_first">
