@@ -193,6 +193,7 @@ Navbar.propTypes = {
    * You won't need it on your project.
    */
   window: PropTypes.func,
+
 };
 
 export default Navbar;
