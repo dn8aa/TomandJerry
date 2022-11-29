@@ -1,19 +1,22 @@
 {
-  "posts": [
+  "products": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "title": "dsf",
+      "description": "dsf",
+      "price": null,
+      "type": "dsf",
+      "img1": "dsfg",
+      "img2": "sdfg",
+      "id": 1
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "title": "dsf",
+      "description": "sdf",
+      "price": 3234,
+      "type": "dsf",
+      "img1": "sdf",
+      "img2": "sdf",
+      "id": 2
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
