@@ -1,0 +1,21 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  background-color: #222;
+  color: white;
+  font-size: 15px;
+  /* width: 100%; */
+}
+
+.the_left_footer {
+  width: 30%;
+}
+.the_center_footer {
+  width: 35%;
+}
+.logo_center {
+  margin-left: -28px;
+}
+.logo_center a {
+  padding-left: 5%;
+}
