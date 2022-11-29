@@ -1,4 +1,6 @@
 import React from "react";
+import AboutUs from "../components/AboutUs/AboutUs";
+import AboutUsPage from "../pages/AboutUsPage";
 import AdminPage from "../pages/AdminPage";
 import AuthPage from "../pages/AuthPage";
 import CartPage from "../pages/CartPage";
@@ -7,6 +9,9 @@ import HomePage from "../pages/HomePage";
 import NotFoundPage from "../pages/NotFoundPage";
 import ProductsDetailsPage from "../pages/ProductsDetailsPage";
 import ProductsPage from "../pages/ProductsPage";
+import { Route, Routes, Navigate } from "react-router-dom";
+import WishList from "../components/WishList/WishList";
+import WIshListPage from "../pages/WIshListPage";
 
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
@@ -18,8 +23,18 @@ const MainRoutes = () => {
     { link: "/cart", element: <CartPage />, id: 6 },
     { link: "/edit/:id", element: <EditProductPage />, id: 8 },
     { link: "/admin", element: <AdminPage />, id: 9 },
+    { link: "/aboutus", element: <AboutUsPage />, id: 10 },
+    { link: "/wishlist", element: <WIshListPage />, id: 11 },
   ];
-  return <div></div>;
+  return (
+    <>
+      <Routes>
+        {PUBLIC_ROUTES.map((item) => (
+          <Route path={item.link} element={item.element} key={item.id} />
+        ))}
+      </Routes>
+    </>
+  );
 };
 
 export default MainRoutes;
