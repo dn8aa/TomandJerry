@@ -1,10 +1,11 @@
+import { Box } from '@mui/material';
 import React from 'react';
 
 const CartPage = () => {
     return (
-        <div>
+        <Box sx={{ m: 10, mt: 10 }}>
             
-        </div>
+        </Box>
     );
 };
 
