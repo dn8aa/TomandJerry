@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { createContext, useContext, useReducer } from "react";
+import React, { createContext, useContext, useReducer, useState } from "react";
 import { ACTIONS, JSON_API_PRODUCTS } from "../helpers/consts";
 import { useLocation } from "react-router-dom";
 export const productContext = createContext();
@@ -28,6 +28,8 @@ const reducer = (state = INIT_STATE, action) => {
 
 //!adding products
 const ProductContextProvider = ({ children }) => {
+  const [img, setImg] = useState(true);
+
   const location = useLocation();
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
@@ -42,11 +44,35 @@ const ProductContextProvider = ({ children }) => {
       type: ACTIONS.GET_PRODUCTS,
       payload: data,
     });
+  }
 
+  async function getProductDetails(id) {
+    const { data } = await axios(`${JSON_API_PRODUCTS}/${id}`);
+    dispatch({
+      type: ACTIONS.GET_PRODUCT_DETAILS,
+      payload: data,
+    });
+  }
+
+  async function saveEditedProduct(newProduct, id) {
+    await axios.patch(`${JSON_API_PRODUCTS}/${id}`, newProduct);
+    getProducts();
+  }
+
+  async function deleteProduct(id) {
+    await axios.delete(`${JSON_API_PRODUCTS}/${id}`);
+    getProducts();
   }
   const values = {
+    img,
+    setImg,
+    products: state.products,
     addProduct,
     getProducts,
+    getProductDetails,
+    productDetails: state.productDetails,
+    deleteProduct,
+    saveEditedProduct,
   };
 
   return (

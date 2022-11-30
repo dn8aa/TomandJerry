@@ -15,6 +15,7 @@ const AddProduct = () => {
     type: "",
     img1: "",
     img2: "",
+    comments: [],
   });
   const handleInp = (e) => {
     if (e.target.name === "price") {

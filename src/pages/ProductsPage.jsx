@@ -1,11 +1,12 @@
+import { Box } from '@mui/material';
 import React from 'react';
 import ProductList from '../components/Products/ProductList';
 
 const ProductsPage = () => {
     return (
-        <div>
+        <Box sx={{m:4,mt:10, }}>
             <ProductList/>
-        </div>
+        </Box>
     );
 };
 

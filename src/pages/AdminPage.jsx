@@ -1,12 +1,13 @@
+import { Box } from "@mui/material";
 import React from "react";
 import AboutUs from "../components/AboutUs/AboutUs";
 import AddProduct from "../components/Products/AddProduct";
 
 const AdminPage = () => {
   return (
-    <div>
+    <Box sx={{ m: 10, mt: 10 }}>
       <AddProduct />
-    </div>
+    </Box>
   );
 };
 
