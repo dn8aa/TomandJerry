@@ -1,17 +1,13 @@
-import React, { createContext, useContext, useState } from "react";
-const authContext = createContext();
+import React, { useState } from "react";
+
+export const authContext = React.createContext();
 export const useAuth = () => {
-  const values = {};
-  return useContext(authContext);
+  return React.useContext(authContext);
 };
+
 const AuthContextProvider = ({ children }) => {
-  // const handleAuth = () => {
-  //   document.body.style.overflow = "hidden";
-  // };
-  const [auth, setAuth] = useState(false);
-
-
-
+  const [auth, setAuth] = useState();
+  const [email, setEmail] = useState("");
 
   const values = { auth, setAuth };
   return <authContext.Provider value={values}>{children}</authContext.Provider>;
