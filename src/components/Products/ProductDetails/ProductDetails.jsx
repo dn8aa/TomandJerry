@@ -1,6 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { useCart } from "../../../contexts/CartContext";
 import { useProducts } from "../../../contexts/ProductContextProvider";
 
 const ProductDetails = () => {
@@ -10,6 +11,9 @@ const ProductDetails = () => {
   useEffect(() => {
     getProductDetails(id);
   }, []);
+
+  const { addProductToCart, checkProductInCart } = useCart();
+
   return (
     <Box sx={{ display: "flex" }}>
       <Box sx={{ display: "flex", width: "60%", alignItems: "center" }}>
@@ -51,6 +55,23 @@ const ProductDetails = () => {
         >
           delete
         </Button>
+
+        {checkProductInCart(productDetails.id) ? (
+          <Button
+            variant="contained"
+            onClick={() => addProductToCart(productDetails)}
+          >
+            ALREADY IN BAG
+          </Button>
+        ) : (
+          <Button
+            variant="contained"
+            onClick={() => addProductToCart(productDetails)}
+          >
+            {" "}
+            ADD TO BAG
+          </Button>
+        )}
       </Box>
     </Box>
   );

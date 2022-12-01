@@ -42,13 +42,11 @@ h1 {
 .auth {
   display: block;
   position: fixed;
-  inset: 0px;
-  z-index: 500;
-  overflow: hidden;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  left: 0px;
+
+  top: 0;
+  right: 0;
+  bottom:0;
+  left: 0;
   background-color: rgba(0, 0, 0, 0.218);
  
 
