@@ -27,7 +27,7 @@
 .App-link {
   color: #61dafb;
 }
-h1{
+h1 {
   margin: 0;
 }
 @keyframes App-logo-spin {
@@ -37,4 +37,19 @@ h1{
   to {
     transform: rotate(360deg);
   }
+}
+
+.auth {
+  display: block;
+  position: fixed;
+  inset: 0px;
+  z-index: 500;
+  overflow: hidden;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.218);
+ 
+
 }
