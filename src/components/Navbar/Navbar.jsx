@@ -17,10 +17,14 @@ import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 import { useNavigate } from "react-router-dom";
+import { useProducts } from "../../contexts/ProductContextProvider";
+import { useAuth } from "../../contexts/AuthContext";
 
 const drawerWidth = 240;
 
 function Navbar(props) {
+  const {  auth, setAuth } = useAuth();
+
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -82,19 +86,19 @@ function Navbar(props) {
           <Box sx={{ width: "33%", display: { xs: "none", sm: "block" } }}>
             <Button
               onClick={() => navigate("/products")}
-              sx={{ p: { xs: 0,lg: 2 }, color: "black" }}
+              sx={{ p: { xs: 0, lg: 2 }, color: "black" }}
             >
               PRODUCTS
             </Button>{" "}
             <Button
               onClick={() => navigate("/admin")}
-              sx={{ p: { xs: 0,lg: 2 }, color: "black" }}
+              sx={{ p: { xs: 0, lg: 2 }, color: "black" }}
             >
               ADMIN
             </Button>{" "}
             <Button
               onClick={() => navigate("/aboutus")}
-              sx={{ p: { xs: 0,lg: 2 }, color: "black" }}
+              sx={{ p: { xs: 0, lg: 2 }, color: "black" }}
             >
               ABOUT US
             </Button>
@@ -148,7 +152,9 @@ function Navbar(props) {
             }}
           >
             <PersonOutlineOutlinedIcon
-              onClick={() => navigate("/auth")}
+              onClick={() => {
+                setAuth(!auth);
+              }}
               sx={{ m: 1, cursor: "pointer" }}
             />
 
@@ -193,7 +199,6 @@ Navbar.propTypes = {
    * You won't need it on your project.
    */
   window: PropTypes.func,
-
 };
 
 export default Navbar;

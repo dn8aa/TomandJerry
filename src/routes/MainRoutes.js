@@ -16,7 +16,6 @@ import WIshListPage from "../pages/WIshListPage";
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
     { link: "/", element: <HomePage />, id: 1 },
-    { link: "/auth", element: <AuthPage />, id: 2 },
     { link: "/products", element: <ProductsPage />, id: 3 },
     { link: "/products/:id", element: <ProductsDetailsPage />, id: 4 },
     { link: "*", element: <NotFoundPage />, id: 5 },

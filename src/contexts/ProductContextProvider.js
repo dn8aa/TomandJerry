@@ -63,6 +63,9 @@ const ProductContextProvider = ({ children }) => {
     await axios.delete(`${JSON_API_PRODUCTS}/${id}`);
     getProducts();
   }
+
+  const [filter, setFilter] = useState(false);
+
   const values = {
     img,
     setImg,
@@ -73,6 +76,9 @@ const ProductContextProvider = ({ children }) => {
     productDetails: state.productDetails,
     deleteProduct,
     saveEditedProduct,
+
+    filter,
+    setFilter,
   };
 
   return (
