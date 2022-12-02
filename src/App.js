@@ -13,8 +13,8 @@ function App() {
     <Box>
       <Navbar />
       <MainRoutes />
-      <Footer />
-      {auth ? <AuthPage className='auth' /> : <></>}
+      {/* {auth ? <AuthPage className='auth' /> : <></>} */}
+      {/* <Footer /> */}
     </Box>
   );
 }
