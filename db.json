@@ -1,29 +1,39 @@
 {
   "products": [
     {
-      "title": "Balenciaga",
+      "title": "clothing",
       "description": "Neo Cagole XS handbag",
       "price": 2300,
-      "type": "",
+      "type": "clothing",
+      "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
+      "img2": "",
+      "comments": [],
+      "id": 1
+    },
+    {
+      "title": "shoes",
+      "description": "Neo Cagole XS handbag",
+      "price": 2200,
+      "type": "shoes",
       "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
       "img2": "",
       "comments": [],
       "id": 2
     },
     {
-      "title": "Balenciaga",
+      "title": "bags",
       "description": "Neo Cagole XS handbag",
-      "price": 2300,
-      "type": "",
+      "price": 2100,
+      "type": "bags",
       "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
       "img2": "",
       "comments": [],
       "id": 3
     },
     {
-      "title": "Balenciaga",
+      "title": "accessories",
       "description": "Neo Cagole XS handbag",
-      "price": 2300,
+      "price": 2000,
       "type": "",
       "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
       "img2": "",
@@ -31,9 +41,9 @@
       "id": 4
     },
     {
-      "title": "Balenciaga",
+      "title": "jewelry",
       "description": "Neo Cagole XS handbag",
-      "price": 2300,
+      "price": 1900,
       "type": "",
       "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
       "img2": "",
@@ -109,6 +119,286 @@
       "img2": "",
       "comments": [],
       "id": 12
+    },
+    {
+      "title": "Balenciaga",
+      "description": "Neo Cagole XS handbag",
+      "price": 2300,
+      "type": "",
+      "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
+      "img2": "",
+      "comments": [],
+      "id": 13
+    },
+    {
+      "title": "Balenciaga",
+      "description": "Neo Cagole XS handbag",
+      "price": 2300,
+      "type": "",
+      "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
+      "img2": "",
+      "comments": [],
+      "id": 14
+    },
+    {
+      "title": "Balenciaga",
+      "description": "Neo Cagole XS handbag",
+      "price": 2300,
+      "type": "",
+      "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
+      "img2": "",
+      "comments": [],
+      "id": 15
+    },
+    {
+      "title": "Balenciaga",
+      "description": "Neo Cagole XS handbag",
+      "price": 2300,
+      "type": "",
+      "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
+      "img2": "",
+      "comments": [],
+      "id": 16
+    },
+    {
+      "title": "Balenciaga",
+      "description": "Neo Cagole XS handbag",
+      "price": 2300,
+      "type": "",
+      "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
+      "img2": "",
+      "comments": [],
+      "id": 17
+    },
+    {
+      "title": "Balenciaga",
+      "description": "Neo Cagole XS handbag",
+      "price": 2300,
+      "type": "",
+      "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
+      "img2": "",
+      "comments": [],
+      "id": 18
+    },
+    {
+      "title": "Balenciaga",
+      "description": "Neo Cagole XS handbag",
+      "price": 2300,
+      "type": "",
+      "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
+      "img2": "",
+      "comments": [],
+      "id": 19
+    },
+    {
+      "title": "Balenciaga",
+      "description": "Neo Cagole XS handbag",
+      "price": 2300,
+      "type": "",
+      "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
+      "img2": "",
+      "comments": [],
+      "id": 20
+    },
+    {
+      "title": "Balenciaga",
+      "description": "Neo Cagole XS handbag",
+      "price": 2300,
+      "type": "",
+      "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
+      "img2": "",
+      "comments": [],
+      "id": 21
+    },
+    {
+      "title": "Balenciaga",
+      "description": "Neo Cagole XS handbag",
+      "price": 2300,
+      "type": "",
+      "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
+      "img2": "",
+      "comments": [],
+      "id": 22
+    },
+    {
+      "title": "Balenciaga",
+      "description": "Neo Cagole XS handbag",
+      "price": 2300,
+      "type": "",
+      "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
+      "img2": "",
+      "comments": [],
+      "id": 23
+    },
+    {
+      "title": "Balenciaga",
+      "description": "Neo Cagole XS handbag",
+      "price": 2300,
+      "type": "",
+      "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
+      "img2": "",
+      "comments": [],
+      "id": 24
+    },
+    {
+      "title": "Balenciaga",
+      "description": "Neo Cagole XS handbag",
+      "price": 2300,
+      "type": "",
+      "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
+      "img2": "",
+      "comments": [],
+      "id": 25
+    },
+    {
+      "title": "Balenciaga",
+      "description": "Neo Cagole XS handbag",
+      "price": 2300,
+      "type": "",
+      "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
+      "img2": "",
+      "comments": [],
+      "id": 26
+    },
+    {
+      "title": "Balenciaga",
+      "description": "Neo Cagole XS handbag",
+      "price": 2300,
+      "type": "",
+      "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
+      "img2": "",
+      "comments": [],
+      "id": 27
+    },
+    {
+      "title": "Balenciaga",
+      "description": "Neo Cagole XS handbag",
+      "price": 2300,
+      "type": "",
+      "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
+      "img2": "",
+      "comments": [],
+      "id": 28
+    }
+    ,
+    {
+      "title": "Balenciaga",
+      "description": "Neo Cagole XS handbag",
+      "price": 2300,
+      "type": "",
+      "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
+      "img2": "",
+      "comments": [],
+      "id": 29
+    }
+    ,
+    {
+      "title": "Balenciaga",
+      "description": "Neo Cagole XS handbag",
+      "price": 2300,
+      "type": "",
+      "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
+      "img2": "",
+      "comments": [],
+      "id": 30
+    }
+    ,
+    {
+      "title": "Balenciaga",
+      "description": "Neo Cagole XS handbag",
+      "price": 2300,
+      "type": "",
+      "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
+      "img2": "",
+      "comments": [],
+      "id": 31
+    }
+    ,
+    {
+      "title": "Balenciaga",
+      "description": "Neo Cagole XS handbag",
+      "price": 2300,
+      "type": "",
+      "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
+      "img2": "",
+      "comments": [],
+      "id": 32    }
+    ,
+    {
+      "title": "Balenciaga",
+      "description": "Neo Cagole XS handbag",
+      "price": 2300,
+      "type": "",
+      "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
+      "img2": "",
+      "comments": [],
+      "id": 33
+    }
+    ,
+    {
+      "title": "Balenciaga",
+      "description": "Neo Cagole XS handbag",
+      "price": 2300,
+      "type": "",
+      "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
+      "img2": "",
+      "comments": [],
+      "id": 34
+    }
+    ,
+    {
+      "title": "Balenciaga",
+      "description": "Neo Cagole XS handbag",
+      "price": 2300,
+      "type": "",
+      "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
+      "img2": "",
+      "comments": [],
+      "id": 35
+    }
+    ,
+    {
+      "title": "Balenciaga",
+      "description": "Neo Cagole XS handbag",
+      "price": 2300,
+      "type": "",
+      "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
+      "img2": "",
+      "comments": [],
+      "id": 36
+    }
+    ,
+    {
+      "title": "Balenciaga",
+      "description": "Neo Cagole XS handbag",
+      "price": 8800,
+      "type": "",
+      "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
+      "img2": "",
+      "comments": [],
+      "id": 37
+    }
+    ,
+    {
+      "title": "Balenciaga",
+      "description": "Neo Cagole XS handbag",
+      "price": 8900,
+      "type": "",
+      "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
+      "img2": "",
+      "comments": [],
+      "id": 38
+    }
+    ,
+    {
+      "title": "Balenciaga",
+      "description": "Neo Cagole XS handbag",
+      "price": 9000,
+      "type": "",
+      "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
+      "img2": "",
+      "comments": [],
+      "id": 39
     }
   ]
 }

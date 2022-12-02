@@ -23,7 +23,7 @@ import { useAuth } from "../../contexts/AuthContext";
 const drawerWidth = 240;
 
 function Navbar(props) {
-  const {  auth, setAuth } = useAuth();
+  const { auth, setAuth } = useAuth();
 
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
