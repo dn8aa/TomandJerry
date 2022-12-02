@@ -4,7 +4,11 @@ import { useSearchParams } from "react-router-dom";
 import ProductFilter from "../components/Products/ProductFilter";
 import ProductList from "../components/Products/ProductList";
 import ProductPagination from "../components/Products/ProductPagination";
+import ProductSort from "../components/Products/ProductSort";
 import { useProducts } from "../contexts/ProductContextProvider";
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
 const ProductsPage = () => {
   const { filter, setFilter, products, getProducts } = useProducts();
@@ -42,42 +46,49 @@ const ProductsPage = () => {
       }}
     >
       <Box>
-        <Box sx={{display:'flex', justifyContent:'space-between'}} >
-          <Typography
-            onClick={() => setFilter(!filter)}
+        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+          <Box
             sx={{
-              width: "10%",
-              fontSize: 20,
-              cursor: "pointer",
-              
+              display: "flex",
+              width: "60%",
+              alignContent: "center",
             }}
           >
-            Filter &#5171;{" "}
-          </Typography>
-          <Typography>fdhj</Typography>
+            {" "}
+            <Typography
+              onClick={() => setFilter(!filter)}
+              sx={{
+                width: "10%",
+                fontSize: 20,
+                cursor: "pointer",
+                pb: 1,
+              }}
+            >
+              Filter {filter ? <>&#707;</> : <>&#60;</>}
+            </Typography>
+          </Box>
+          <ProductSort />
         </Box>
         <Box sx={{ display: "flex" }}>
           {filter ? (
-            <Box sx={{ width: "100%" }}>
+            <Box sx={{ width: "250px" }}>
               <ProductFilter />
             </Box>
           ) : (
             <></>
           )}
-
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-            }}
-          >
-            <Box sx={{ display: "flex", justifyContent: "right" }}>
-              {" "}
-              
+          <div align="center">
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                width: "90%",
+                alignContent: "center",
+              }}
+            >
+              <ProductList currentData={currentData} />
             </Box>
-
-            <ProductList currentData={currentData} />
-          </Box>
+          </div>
         </Box>
       </Box>
       <Box sx={{ display: "flex", justifyContent: "center", mt: 5 }}>
