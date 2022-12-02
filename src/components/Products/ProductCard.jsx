@@ -13,17 +13,37 @@ const ProductCard = ({ item }) => {
       onClick={() => navigate(`/products/${item.id}`)}
       sx={{ m: 2, display: "flex", flexDirection: "column" }}
     >
-      <Box onMouseOut={() => setImg(false)} onMouseOver={() => setImg(true)}>
-        {/* {img ? (
+      <Box onMouseOut={() => setImg("")} onMouseOver={() => setImg(item.id)}>
+        {img === item.id ? (
           <Box
-            sx={{ width: "270px", height: "342", backgroundColor: "green" }}
-          ></Box>
+            sx={{
+              width: { xs: "216px", lg: "270px" },
+              height: { xs: "273px", lg: "342px" },
+              display: "flex",
+              justifyContent: "flex-end",
+              backgroundImage: `url(${item.img2})`,
+              backgroundSize: "cover",
+              transition: "0.3s",
+            }}
+          >
+            <FavoriteBorderIcon sx={{ m: 1 }} />
+          </Box>
         ) : (
           <Box
-            sx={{ width: "270px", height: "200px", backgroundColor: "blue" }}
-          ></Box>
-        )} */}
-
+            sx={{
+              width: { xs: "216px", lg: "270px" },
+              height: { xs: "273px", lg: "342px" },
+              display: "flex",
+              justifyContent: "flex-end",
+              backgroundImage: `url(${item.img1})`,
+              backgroundSize: "cover",
+              transition: "0.3s",
+            }}
+          >
+            <FavoriteBorderIcon sx={{ m: 1 }} />
+          </Box>
+        )}
+        {/* 
         <Box
           sx={{
             width: { xs: "216px", lg: "270px" },
@@ -35,7 +55,7 @@ const ProductCard = ({ item }) => {
           }}
         >
           <FavoriteBorderIcon sx={{ m: 1 }} />
-        </Box>
+        </Box> */}
       </Box>
       <Typography sx={{ fontWeight: 600, fontSize: 20 }}>
         {item.title}

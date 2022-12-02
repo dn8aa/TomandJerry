@@ -6,7 +6,7 @@
       "price": 2300,
       "type": "clothing",
       "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
-      "img2": "",
+      "img2": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42473919_1000.jpg",
       "comments": [],
       "id": 1
     },
@@ -16,27 +16,17 @@
       "price": 2200,
       "type": "shoes",
       "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
-      "img2": "",
+      "img2": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42473919_1000.jpg",
       "comments": [],
       "id": 2
-    },
-    {
-      "title": "bags",
-      "description": "Neo Cagole XS handbag",
-      "price": 2100,
-      "type": "bags",
-      "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
-      "img2": "",
-      "comments": [],
-      "id": 3
     },
     {
       "title": "accessories",
       "description": "Neo Cagole XS handbag",
       "price": 2000,
-      "type": "",
+      "type": "accessories",
       "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
-      "img2": "",
+      "img2": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42473919_1000.jpg",
       "comments": [],
       "id": 4
     },
@@ -44,9 +34,9 @@
       "title": "jewelry",
       "description": "Neo Cagole XS handbag",
       "price": 1900,
-      "type": "",
+      "type": "jewelry",
       "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
-      "img2": "",
+      "img2": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42473919_1000.jpg",
       "comments": [],
       "id": 5
     },
@@ -56,7 +46,7 @@
       "price": 2300,
       "type": "",
       "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
-      "img2": "",
+      "img2": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42473919_1000.jpg",
       "comments": [],
       "id": 6
     },
@@ -66,7 +56,7 @@
       "price": 2300,
       "type": "",
       "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
-      "img2": "",
+      "img2": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42473919_1000.jpg",
       "comments": [],
       "id": 7
     },
@@ -76,7 +66,7 @@
       "price": 2300,
       "type": "",
       "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
-      "img2": "",
+      "img2": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42473919_1000.jpg",
       "comments": [],
       "id": 8
     },
@@ -86,7 +76,7 @@
       "price": 2300,
       "type": "",
       "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
-      "img2": "",
+      "img2": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42473919_1000.jpg",
       "comments": [],
       "id": 9
     },
@@ -96,7 +86,7 @@
       "price": 2300,
       "type": "",
       "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
-      "img2": "",
+      "img2": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42473919_1000.jpg",
       "comments": [],
       "id": 10
     },
@@ -106,7 +96,7 @@
       "price": 2300,
       "type": "",
       "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
-      "img2": "",
+      "img2": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42473919_1000.jpg",
       "comments": [],
       "id": 11
     },
@@ -116,7 +106,7 @@
       "price": 2300,
       "type": "",
       "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
-      "img2": "",
+      "img2": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42473919_1000.jpg",
       "comments": [],
       "id": 12
     },
@@ -279,8 +269,7 @@
       "img2": "",
       "comments": [],
       "id": 28
-    }
-    ,
+    },
     {
       "title": "Balenciaga",
       "description": "Neo Cagole XS handbag",
@@ -290,8 +279,7 @@
       "img2": "",
       "comments": [],
       "id": 29
-    }
-    ,
+    },
     {
       "title": "Balenciaga",
       "description": "Neo Cagole XS handbag",
@@ -301,8 +289,7 @@
       "img2": "",
       "comments": [],
       "id": 30
-    }
-    ,
+    },
     {
       "title": "Balenciaga",
       "description": "Neo Cagole XS handbag",
@@ -312,8 +299,7 @@
       "img2": "",
       "comments": [],
       "id": 31
-    }
-    ,
+    },
     {
       "title": "Balenciaga",
       "description": "Neo Cagole XS handbag",
@@ -322,8 +308,8 @@
       "img1": "https://cdn-images.farfetch-contents.com/18/94/53/04/18945304_42475067_1000.jpg",
       "img2": "",
       "comments": [],
-      "id": 32    }
-    ,
+      "id": 32
+    },
     {
       "title": "Balenciaga",
       "description": "Neo Cagole XS handbag",
@@ -333,8 +319,7 @@
       "img2": "",
       "comments": [],
       "id": 33
-    }
-    ,
+    },
     {
       "title": "Balenciaga",
       "description": "Neo Cagole XS handbag",
@@ -344,8 +329,7 @@
       "img2": "",
       "comments": [],
       "id": 34
-    }
-    ,
+    },
     {
       "title": "Balenciaga",
       "description": "Neo Cagole XS handbag",
@@ -355,8 +339,7 @@
       "img2": "",
       "comments": [],
       "id": 35
-    }
-    ,
+    },
     {
       "title": "Balenciaga",
       "description": "Neo Cagole XS handbag",
@@ -366,8 +349,7 @@
       "img2": "",
       "comments": [],
       "id": 36
-    }
-    ,
+    },
     {
       "title": "Balenciaga",
       "description": "Neo Cagole XS handbag",
@@ -377,8 +359,7 @@
       "img2": "",
       "comments": [],
       "id": 37
-    }
-    ,
+    },
     {
       "title": "Balenciaga",
       "description": "Neo Cagole XS handbag",
@@ -388,8 +369,7 @@
       "img2": "",
       "comments": [],
       "id": 38
-    }
-    ,
+    },
     {
       "title": "Balenciaga",
       "description": "Neo Cagole XS handbag",

@@ -28,7 +28,7 @@ const reducer = (state = INIT_STATE, action) => {
 
 //!adding products
 const ProductContextProvider = ({ children }) => {
-  const [img, setImg] = useState(true);
+  const [img, setImg] = useState("true");
 
   const location = useLocation();
   const [state, dispatch] = useReducer(reducer, INIT_STATE);
@@ -39,7 +39,7 @@ const ProductContextProvider = ({ children }) => {
     console.log(newProduct);
   }
   async function getProducts() {
-    const { data } = await axios(JSON_API_PRODUCTS);
+    const { data } = await axios(`${JSON_API_PRODUCTS}/${location.search}`);
     dispatch({
       type: ACTIONS.GET_PRODUCTS,
       payload: data,
@@ -68,11 +68,22 @@ const ProductContextProvider = ({ children }) => {
 
   const navigate = useNavigate();
 
-  // const fetchByParams = async (query, value) => {
-  //   const search = new URLSearchParams(location.search);
-  //   if (value === 'all')
-  // };
+  const fetchByParams = async (query, value) => {
+    const search = new URLSearchParams(location.search);
+    if (value === "all") {
+      search.delete(query);
+    } else if (query == "_sort") {
+      search.set(query, "price");
+      search.set("_order", value);
+    } else {
+      search.set(query, value);
+    }
 
+    const url = `${location.pathname}?${search.toString()}`;
+    navigate(url);
+  };
+
+  const [filterOption, setFilterOption] = useState("");
   const values = {
     img,
     setImg,
@@ -83,9 +94,12 @@ const ProductContextProvider = ({ children }) => {
     productDetails: state.productDetails,
     deleteProduct,
     saveEditedProduct,
+    fetchByParams,
 
     filter,
     setFilter,
+    filterOption,
+    setFilterOption,
   };
 
   return (
