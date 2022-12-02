@@ -19,7 +19,7 @@ const ProductDetails = () => {
       <Box sx={{ display: "flex", width: "60%", alignItems: "center" }}>
         <img width="50%" src={productDetails.img1} alt="" />
 
-        <img width="50%" src={productDetails.img1} alt="" />
+        <img width="50%" src={productDetails.img2} alt="" />
       </Box>
       <Box
         sx={{
