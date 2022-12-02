@@ -34,19 +34,20 @@ const ProductSort = () => {
     //   </NativeSelect>
     // </FormControl>
 
-      <FormControl >
-        <Select
-          onChange={(e) => fetchByParams("_sort", e.target.value)}
-          defaultValue={"all"}
-          inputProps={{
-            name: "sort",
-          }}
-        >
-          <MenuItem value={"all"}>All</MenuItem>
-          <MenuItem value={"asc"}>Low to High</MenuItem>
-          <MenuItem value={"desc"}>High to Low</MenuItem>
-        </Select>
-      </FormControl>
+    <FormControl width={"30%"}>
+      <Select
+       size="small"
+        onChange={(e) => fetchByParams("_sort", e.target.value)}
+        defaultValue={"all"}
+        inputProps={{
+          name: "sort",
+        }}
+      >
+        <MenuItem value={"all"}>All</MenuItem>
+        <MenuItem value={"asc"}>Low to High</MenuItem>
+        <MenuItem value={"desc"}>High to Low</MenuItem>
+      </Select>
+    </FormControl>
   );
 };
 

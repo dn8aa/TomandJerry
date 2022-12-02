@@ -23,26 +23,27 @@ const ProductCard = ({ item }) => {
               justifyContent: "flex-end",
               backgroundImage: `url(${item.img2})`,
               backgroundSize: "cover",
+              transition: "0.3s",
             }}
           >
             <FavoriteBorderIcon sx={{ m: 1 }} />
           </Box>
         ) : (
           <Box
-          sx={{
-            width: { xs: "216px", lg: "270px" },
-            height: { xs: "273px", lg: "342px" },
-            display: "flex",
-            justifyContent: "flex-end",
-            backgroundImage: `url(${item.img1})`,
-            backgroundSize: "cover",
-          
-          }}
-        >
-          <FavoriteBorderIcon sx={{ m: 1 }} />
-        </Box>
+            sx={{
+              width: { xs: "216px", lg: "270px" },
+              height: { xs: "273px", lg: "342px" },
+              display: "flex",
+              justifyContent: "flex-end",
+              backgroundImage: `url(${item.img1})`,
+              backgroundSize: "cover",
+              transition: "0.3s",
+            }}
+          >
+            <FavoriteBorderIcon sx={{ m: 1 }} />
+          </Box>
         )}
-{/* 
+        {/* 
         <Box
           sx={{
             width: { xs: "216px", lg: "270px" },

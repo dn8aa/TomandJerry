@@ -25,6 +25,7 @@ const ProductDetails = () => {
         sx={{
           display: "flex",
           flexDirection: "column",
+          ml: 10,
           mt: 6,
           pl: 5,
           width: "40%",
@@ -38,40 +39,59 @@ const ProductDetails = () => {
         <Typography sx={{ fontSize: 22, fontWeight: 400, mt: 5, mb: 5 }}>
           ${productDetails.price}
         </Typography>
-        <Button
-          onClick={() => {
-            navigate(`/edit/${id}`);
-          }}
-          color="secondary"
-        >
-          edit
-        </Button>
-        <Button
-          onClick={() => {
-            deleteProduct(id);
-            navigate("/products");
-          }}
-          color="error"
-        >
-          delete
-        </Button>
 
-        {checkProductInCart(productDetails.id) ? (
-          <Button
-            variant="contained"
-            onClick={() => addProductToCart(productDetails)}
-          >
-            ALREADY IN BAG
+        <Box sx={{ display: "flex", flexDirection: "column", width: "50%" }}>
+          {checkProductInCart(productDetails.id) ? (
+            <Button
+              variant="black"
+              onClick={() => addProductToCart(productDetails)}
+              sx={{ border: "1px solid lightgrey", }}
+            >
+              ALREADY IN BAG
+            </Button>
+          ) : (
+            <Button
+              className="btn-add"
+              variant="contained"
+              sx={{
+                backgroundColor: "black",
+                ":hover": {
+                  backgroundColor: "white",
+                  border: "1px solid green",
+                  color: "green",
+                  boxShadow: "none",
+                },
+              }}
+              onClick={() => addProductToCart(productDetails)}
+            >
+              {" "}
+              ADD TO BAG
+            </Button>
+          )}
+          <Button variant="black" sx={{ mt: 1, border: "1px black solid" }}>
+            Wishlist &#128150;
           </Button>
-        ) : (
+
           <Button
-            variant="contained"
-            onClick={() => addProductToCart(productDetails)}
+            onClick={() => {
+              navigate(`/edit/${id}`);
+            }}
+            variant="black"
+            sx={{ border: "1px solid lightgrey", mt: 4 }}
           >
-            {" "}
-            ADD TO BAG
+            edit
           </Button>
-        )}
+          <Button
+            onClick={() => {
+              deleteProduct(id);
+              navigate("/products");
+            }}
+           color='error'
+            sx={{ border: "1px solid lightgrey", mt: 1}}
+          >
+            delete
+          </Button>
+        </Box>
       </Box>
     </Box>
   );

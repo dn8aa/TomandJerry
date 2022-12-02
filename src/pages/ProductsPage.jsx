@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, TextField, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import ProductFilter from "../components/Products/ProductFilter";
@@ -9,6 +9,8 @@ import { useProducts } from "../contexts/ProductContextProvider";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+
+import SearchIcon from "@mui/icons-material/Search";
 
 const ProductsPage = () => {
   const { filter, setFilter, products, getProducts } = useProducts();
@@ -34,6 +36,14 @@ const ProductsPage = () => {
     setPage(1);
   }, [searchParams]);
 
+  const [search, setSearch] = React.useState(searchParams.get("q") || "");
+
+  React.useEffect(() => {
+    setSearchParams({
+      q: search,
+    });
+  }, [search]);
+
   return (
     <Box
       sx={{
@@ -50,7 +60,7 @@ const ProductsPage = () => {
           <Box
             sx={{
               display: "flex",
-              width: "60%",
+              width: "100px",
               alignContent: "center",
             }}
           >
@@ -58,16 +68,32 @@ const ProductsPage = () => {
             <Typography
               onClick={() => setFilter(!filter)}
               sx={{
-                width: "10%",
+                width: "100%",
                 fontSize: 20,
                 cursor: "pointer",
-                pb: 1,
               }}
             >
               Filter {filter ? <>&#707;</> : <>&#60;</>}
             </Typography>
           </Box>
-          <ProductSort />
+          <Box sx={{ display: "flex" }}>
+            {" "}
+            <ProductSort />
+            <Box>
+              <TextField
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder="find item"
+                sx={{ ml: 3 }}
+                size="small"
+              />
+              <SearchIcon
+                onClick={() => {}}
+                sx={{ m: 1, cursor: "pointer" }}
+                n
+              />
+            </Box>
+          </Box>
         </Box>
         <Box sx={{ display: "flex" }}>
           {filter ? (
