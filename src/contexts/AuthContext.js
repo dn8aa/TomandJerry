@@ -7,6 +7,8 @@ export const useAuth = () => {
 };
 
 const AuthContextProvider = ({ children }) => {
+  const [auth, setAuth] = useState(false);
+
   const [user, setUser] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -25,6 +27,7 @@ const AuthContextProvider = ({ children }) => {
   };
 
   const handleSignup = () => {
+    console.log("Sdjfj");
     clearErrors();
     fire
       .auth()
@@ -96,8 +99,28 @@ const AuthContextProvider = ({ children }) => {
     handleLogin,
     handleLogout,
     handleSignup,
+    auth,
+    setAuth,
   };
   return <authContext.Provider value={values}>{children}</authContext.Provider>;
 };
+
+// export default AuthContextProvider;
+
+// import React, { createContext, useContext, useState } from "react";
+// const authContext = createContext();
+// export const useAuth = () => {
+//   const values = {};
+//   return useContext(authContext);
+// };
+// const AuthContextProvider = ({ children }) => {
+//   // const handleAuth = () => {
+//   //   document.body.style.overflow = "hidden";
+//   // };
+//   const [auth, setAuth] = useState(false);
+
+//   const values = { auth, setAuth };
+//   return <authContext.Provider value={values}>{children}</authContext.Provider>;
+// };
 
 export default AuthContextProvider;
