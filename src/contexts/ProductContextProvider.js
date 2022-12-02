@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { createContext, useContext, useReducer, useState } from "react";
 import { ACTIONS, JSON_API_PRODUCTS } from "../helpers/consts";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 export const productContext = createContext();
 
 export const useProducts = () => {
@@ -65,6 +65,13 @@ const ProductContextProvider = ({ children }) => {
   }
 
   const [filter, setFilter] = useState(false);
+
+  const navigate = useNavigate();
+
+  // const fetchByParams = async (query, value) => {
+  //   const search = new URLSearchParams(location.search);
+  //   if (value === 'all')
+  // };
 
   const values = {
     img,

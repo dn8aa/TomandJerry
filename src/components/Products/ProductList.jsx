@@ -3,17 +3,26 @@ import React, { useEffect } from "react";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import ProductCard from "./ProductCard";
 
-const ProductList = () => {
+const ProductList = ({ currentData }) => {
   const { products, getProducts } = useProducts();
 
   useEffect(() => {
     getProducts();
   }, []);
+
   return (
-    <Box sx={{ display: "flex", flexWrap: "wrap", justifyContent:'space-between' }}>
-      {products.map((item) => (
-        <ProductCard key={item.id} item={item} />
-      ))}
+    <Box
+      sx={{
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "space-between",
+      }}
+    >
+      {products ? (
+        currentData().map((item) => <ProductCard key={item.id} item={item} />)
+      ) : (
+        <></>
+      )}
     </Box>
   );
 };

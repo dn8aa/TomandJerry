@@ -102,10 +102,11 @@ const CartContextProvider = ({ children }) => {
 
   function deleteCartProduct(id) {
     let cart = JSON.parse(localStorage.getItem("cart"));
-    cart.product = cart.products.filter((elem) => elem.item.id !== id);
+    cart.products = cart.products.filter((elem) => elem.item.id !== id);
     cart.totalPrice = calcTotalPrice(cart.products);
     localStorage.setItem("cart", JSON.stringify(cart));
     getCart();
+
     dispatch({
       type: CART.GET_CART_LENGTH,
       payload: cart,
@@ -125,7 +126,7 @@ const CartContextProvider = ({ children }) => {
     }
   }
 
-  const [counter, setCounter] = useState(false);
+  const [counter, setCounter] = useState("");
 
   const values = {
     changeProductCount,
