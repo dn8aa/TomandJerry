@@ -60,7 +60,7 @@ const ProductFilter = () => {
             fontWeight: "bold",
             padding: "7px 0",
             [theme.breakpoints.down("md")]: {
-              fontSize: "0.8rem",
+              fontSize: 20,
             },
           }}
         >

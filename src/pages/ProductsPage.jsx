@@ -87,18 +87,18 @@ const ProductsPage = () => {
             sx={{
               display: "flex",
               flexDirection: { xs: "column", sm: "row" },
-              width: { xs: "100%", sm: "30%" },
-              alignContent:'flex-start',
+              width: { xs: "100%", sm: "40%" },
+              justifyContent:'center'
             }}
           >
             {" "}
             <ProductSort />
-            <Box>
+            <Box sx={{ width: { xs: "90%", sm: "70%" } }}>
               <TextField
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="find item"
-                sx={{ ml: 3 }}
+                sx={{ ml: 3, width: { xs: "60%", sm: "50%" } }}
                 size="small"
               />
               <SearchIcon

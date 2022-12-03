@@ -1,9 +1,11 @@
 import { Box, Button, Typography } from "@mui/material";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useCart } from "../../contexts/CartContext";
 
 const Summary = () => {
   const { cart } = useCart();
+  const navigate = useNavigate()
   return (
     <Box sx={{ width: { xs: "100%", sm: "30%", m: 7 } }}>
       <Typography sx={{ fontSize: 20, fontWeight:600 }}>Summary</Typography>
@@ -76,6 +78,23 @@ const Summary = () => {
         }}
       >
         Save and Continue
+      </Button>
+      <Button
+        variant="black"
+        onClick={()=> navigate('/cart')}
+        sx={{
+            border:'1px lightgrey solid',
+          width: "60%",
+            mt:2,
+          ":hover": {
+            backgroundColor: "lightgrey",
+            color: "white",
+            boxShadow: "none",
+            width: "60%",
+          },
+        }}
+      >
+       Go Back to Cart
       </Button>
     </Box>
   );
