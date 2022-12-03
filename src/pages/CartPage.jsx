@@ -6,7 +6,7 @@ import AnnouncementOutlinedIcon from "@mui/icons-material/AnnouncementOutlined";
 
 const CartPage = () => {
   return (
-    <Box sx={{ m: 10, mt: 10 }}>
+    <Box sx={{ m: {xs:2, sm:10}, mt: 10 }}>
       <Typography
         sx={{
           textAlign: "center",
@@ -18,7 +18,7 @@ const CartPage = () => {
         SHOPPING BAG
       </Typography>
 
-      <Box sx={{ display: "flex", mt: 3 }}>
+      <Box sx={{ display: "flex", mt: 3, flexDirection:{xs:'column', md:'row'} }}>
         <Cart />
         <Order />
       </Box>

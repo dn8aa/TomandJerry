@@ -8,7 +8,14 @@ const Order = () => {
   const promotion = 124.4;
   const navigate = useNavigate();
   return (
-    <Box sx={{ width: "30%", boxSizing: "border-box", padding: 6 }}>
+    <Box
+      sx={{
+        width: { xs: "100%", md: "30%" },
+        boxSizing: "border-box",
+        padding: { xs: 0, md: 6 },
+        mt:{xs:6, md:0}
+      }}
+    >
       <Typography sx={{ fontWeight: 600, fontSize: 18 }}>Summary</Typography>
       <Box sx={{ display: "flex", justifyContent: "space-between", mt: 2 }}>
         <Typography>Subtotal</Typography>
