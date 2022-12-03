@@ -11,9 +11,22 @@ const ProductCard = ({ item }) => {
   return (
     <Box
       onClick={() => navigate(`/products/${item.id}`)}
-      sx={{ m: 2, display: "flex", flexDirection: "column" }}
+      sx={{
+        m: 2,
+        display: "flex",
+        flexDirection: "column",
+        width: { xs: "216px", lg: "270px" },
+        height: 'fit-content',
+      }}
     >
-      <Box onMouseOut={() => setImg("")} onMouseOver={() => setImg(item.id)}>
+      <Box
+        sx={{
+          width: { xs: "216px", lg: "270px" },
+          height: { xs: "273px", lg: "342px" },
+        }}
+        onMouseOut={() => setImg("")}
+        onMouseOver={() => setImg(item.id)}
+      >
         {img === item.id ? (
           <Box
             sx={{

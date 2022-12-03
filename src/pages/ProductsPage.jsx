@@ -103,18 +103,8 @@ const ProductsPage = () => {
           ) : (
             <></>
           )}
-          <div align="center">
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-                width: "90%",
-                alignContent: "center",
-              }}
-            >
-              <ProductList currentData={currentData} />
-            </Box>
-          </div>
+
+          <ProductList currentData={currentData} />
         </Box>
       </Box>
       <Box sx={{ display: "flex", justifyContent: "center", mt: 5 }}>
