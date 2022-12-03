@@ -15,7 +15,9 @@ const ProductList = ({ currentData }) => {
       sx={{
         display: "flex",
         flexWrap: "wrap",
-        justifyContent: "space-between",
+        justifyContent: "center",
+        flexDirection:'row',
+        width:'100%'
       }}
     >
       {products ? (

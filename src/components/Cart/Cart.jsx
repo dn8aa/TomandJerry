@@ -22,7 +22,7 @@ const Cart = () => {
     getCart();
   };
   return (
-    <Box sx={{ width: "70%", borderTop: "1px solid lightgrey", padding:2, pt: 0}}>
+    <Box sx={{ width: "70%", borderTop: "1px solid lightgrey", padding:2, pt: 4, }}>
       <table>
         <tbody>
           {cart.products.map((row, i) => (
@@ -91,18 +91,7 @@ const Cart = () => {
                           {" "}
                           Save
                         </Typography>
-                        <Typography
-                          onClick={() => setCounter("")}
-                          sx={{
-                            textDecoration: "underline",
-                            fontSize: 14,
-                            ml: 1,
-                            cursor: "pointer",
-                          }}
-                        >
-                          {" "}
-                          Cancel
-                        </Typography>
+                      
                       </Box>
                     ) : (
                       <></>
