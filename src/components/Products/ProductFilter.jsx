@@ -41,6 +41,7 @@ const ProductFilter = () => {
 
         // borderTop: '1px solid rgb(192, 192, 192)',
         border: "none",
+        width:'250px'
       }}
       expanded={expanded === "panel2"}
       onChange={handleChange("panel2")}

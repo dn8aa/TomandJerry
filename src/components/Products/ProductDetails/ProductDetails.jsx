@@ -68,7 +68,7 @@ const ProductDetails = () => {
               ADD TO BAG
             </Button>
           )}
-          <Button variant="black" sx={{ mt: 1, border: "1px black solid" }}>
+          <Button variant="black" sx={{ mt: 1, border: "1px lightgrey solid" }}>
             Wishlist &#128150;
           </Button>
 

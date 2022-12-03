@@ -48,15 +48,22 @@ const ProductsPage = () => {
     <Box
       sx={{
         mt: 0,
-        m: 5,
+        m: { xs: 0, sm: 5 },
         p: 4,
+        px: { xs: 2, sm: 4 },
         pt: 10,
         display: "flex",
         flexDirection: "column",
       }}
     >
       <Box>
-        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            flexDirection: { xs: "column", sm: "row" },
+          }}
+        >
           <Box
             sx={{
               display: "flex",
@@ -76,7 +83,14 @@ const ProductsPage = () => {
               Filter {filter ? <>&#707;</> : <>&#60;</>}
             </Typography>
           </Box>
-          <Box sx={{ display: "flex" }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", sm: "row" },
+              width: { xs: "100%", sm: "30%" },
+              alignContent:'flex-start',
+            }}
+          >
             {" "}
             <ProductSort />
             <Box>
@@ -95,14 +109,10 @@ const ProductsPage = () => {
             </Box>
           </Box>
         </Box>
-        <Box sx={{ display: "flex" }}>
-          {filter ? (
-            <Box sx={{ width: "250px" }}>
-              <ProductFilter />
-            </Box>
-          ) : (
-            <></>
-          )}
+        <Box
+          sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" } }}
+        >
+          {filter ? <ProductFilter /> : <></>}
 
           <ProductList currentData={currentData} />
         </Box>

@@ -1,5 +1,7 @@
 import React from "react";
 import AboutUs from "../components/AboutUs/AboutUs";
+import CheckoutPage from "../pages/CheckoutPage";
+
 import AboutUsPage from "../pages/AboutUsPage";
 import AdminPage from "../pages/AdminPage";
 import AuthPage from "../pages/AuthPage";
@@ -24,6 +26,7 @@ const MainRoutes = () => {
     { link: "/admin", element: <AdminPage />, id: 9 },
     { link: "/aboutus", element: <AboutUsPage />, id: 10 },
     { link: "/wishlist", element: <WIshListPage />, id: 11 },
+    { link: "/checkout", element: <CheckoutPage />, id: 12 },
   ];
   return (
     <>

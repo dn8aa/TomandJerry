@@ -34,7 +34,7 @@ const ProductSort = () => {
     //   </NativeSelect>
     // </FormControl>
 
-    <FormControl width={"30%"}>
+    <FormControl sx={{ mr:'auto'}}>
       <Select
        size="small"
         onChange={(e) => fetchByParams("_sort", e.target.value)}

@@ -70,6 +70,31 @@ function Navbar(props) {
             <ListItemText primary="ABOUT US" />
           </ListItemButton>
         </ListItem>
+
+        <Box
+          sx={{
+            width:'90%',
+            display: "flex",
+            justifyContent: "space-around",
+            alignItems: "center",
+          }}
+        >
+          {" "}
+          <PersonOutlineOutlinedIcon
+            onClick={() => {
+              setAuth(!auth);
+            }}
+            sx={{ cursor: "pointer" }}
+          />
+          <FavoriteBorderOutlinedIcon
+            onClick={() => navigate("/wishlist")}
+            sx={{ cursor: "pointer" }}
+          />
+          <LocalMallOutlinedIcon
+            onClick={() => navigate("/cart")}
+            sx={{ cursor: "pointer" }}
+          />
+        </Box>
       </List>
     </Box>
   );
@@ -141,7 +166,7 @@ function Navbar(props) {
           <Box
             sx={{
               width: { xs: "33%", sm: "33%" },
-              display: "flex",
+              display: {xs:'none',sm:'flex'},
               justifyContent: "right",
               alignItems: "center",
               paddingRight: 2,
