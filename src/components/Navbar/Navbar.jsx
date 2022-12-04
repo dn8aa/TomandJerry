@@ -19,6 +19,7 @@ import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import { useAuth } from "../../contexts/AuthContext";
+import { TextField } from "@mui/material";
 
 const drawerWidth = 240;
 
@@ -96,12 +97,6 @@ function Navbar(props) {
             >
               ADMIN
             </Button>{" "}
-            <Button
-              onClick={() => navigate("/aboutus")}
-              sx={{ p: { xs: 0, lg: 2 }, color: "black" }}
-            >
-              ABOUT US
-            </Button>
           </Box>
           <IconButton
             color="inherit"
@@ -133,7 +128,7 @@ function Navbar(props) {
             variant="h6"
             sx={{
               display: { xs: "block", sm: "none" },
-              width: "50%",
+              width: { xs: "33%", sm: "50%" },
               my: 2,
               fontWeight: 700,
               fontSize: "30px",
@@ -142,9 +137,10 @@ function Navbar(props) {
           >
             FARFETCH
           </Typography>
+
           <Box
             sx={{
-              width: { xs: "50%", sm: "33%" },
+              width: { xs: "33%", sm: "33%" },
               display: "flex",
               justifyContent: "right",
               alignItems: "center",
