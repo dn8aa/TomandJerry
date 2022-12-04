@@ -5,14 +5,15 @@ import { useProducts } from "../../contexts/ProductContextProvider";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { useNavigate } from "react-router-dom";
 import { useWishlist } from "../../contexts/WishlistContext";
-
+import FavoriteIcon from "@mui/icons-material/Favorite";
 const ProductCard = ({ item }) => {
   const { img, setImg } = useProducts();
   const navigate = useNavigate();
-  const { addProductToWish } = useWishlist();
+  const { addProductToWish, checkProductInWish } = useWishlist();
+  const { favoriteHover, setFavoriteHover } = useWishlist();
+
   return (
     <Box
-      onClick={() => navigate(`/products/${item.id}`)}
       sx={{
         m: 2,
         display: "flex",
@@ -41,7 +42,17 @@ const ProductCard = ({ item }) => {
               transition: "0.3s",
             }}
           >
-            <FavoriteBorderIcon sx={{ m: 1 }} />
+            {checkProductInWish(item.id) ? (
+              <FavoriteIcon
+                sx={{ m: 1, cursor: "pointer" }}
+                onClick={() => addProductToWish(item)}
+              />
+            ) : (
+              <FavoriteBorderIcon
+                sx={{ m: 1, cursor: "pointer" }}
+                onClick={() => addProductToWish(item)}
+              />
+            )}
           </Box>
         ) : (
           <Box
@@ -55,10 +66,17 @@ const ProductCard = ({ item }) => {
               transition: "0.3s",
             }}
           >
-            <FavoriteBorderIcon
-              onClick={() => addProductToWish(item)}
-              sx={{ m: 1 }}
-            />
+            {!checkProductInWish(item.id) ? (
+              <FavoriteBorderIcon
+                sx={{ m: 1, cursor: "pointer" }}
+                onClick={() => addProductToWish(item)}
+              />
+            ) : (
+              <FavoriteIcon
+                sx={{ m: 1, cursor: "pointer" }}
+                onClick={() => addProductToWish(item)}
+              />
+            )}
           </Box>
         )}
         {/* 
@@ -75,10 +93,18 @@ const ProductCard = ({ item }) => {
           <FavoriteBorderIcon sx={{ m: 1 }} />
         </Box> */}
       </Box>
-      <Typography sx={{ fontWeight: 600, fontSize: 20 }}>
+      <Typography
+        onClick={() => navigate(`/products/${item.id}`)}
+        sx={{ fontWeight: 600, fontSize: 20, cursor: "pointer" }}
+      >
         {item.title}
       </Typography>
-      <Typography sx={{ mb: 2 }}>{item.description}</Typography>
+      <Typography
+        onClick={() => navigate(`/products/${item.id}`)}
+        sx={{ mb: 2, cursor: "pointer" }}
+      >
+        {item.description}
+      </Typography>
       <Typography>${item.price}</Typography>
     </Box>
   );

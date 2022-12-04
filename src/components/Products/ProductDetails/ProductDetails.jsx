@@ -10,7 +10,7 @@ import { ADMIN } from "../../../helpers/consts";
 const ProductDetails = () => {
   const navigate = useNavigate();
   const { getProductDetails, productDetails, deleteProduct } = useProducts();
-  const { addProductToWish } = useWishlist();
+  const { addProductToWish, checkProductInWish } = useWishlist();
   const { id } = useParams();
   useEffect(() => {
     getProductDetails(id);
@@ -90,13 +90,23 @@ const ProductDetails = () => {
               ADD TO BAG
             </Button>
           )}
-          <Button
-            onClick={() => addProductToWish(productDetails)}
-            variant="black"
-            sx={{ mt: 1, border: "1px lightgrey solid" }}
-          >
-            Wishlist &#128150;
-          </Button>
+          {checkProductInWish(productDetails.id) ? (
+            <Button
+              onClick={() => addProductToWish(productDetails)}
+              variant="black"
+              sx={{ mt: 1, border: "1px lightgrey solid" }}
+            >
+              In wishlist &#128150;
+            </Button>
+          ) : (
+            <Button
+              onClick={() => addProductToWish(productDetails)}
+              variant="black"
+              sx={{ mt: 1, border: "1px lightgrey solid" }}
+            >
+              add to Wishlist &#128420;
+            </Button>
+          )}
 
           {email === ADMIN ? (
             <Button

@@ -4,6 +4,7 @@ import { useCart } from "../../contexts/CartContext";
 import ClearIcon from "@mui/icons-material/Clear";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { useWishlist } from "../../contexts/WishlistContext";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 const Cart = () => {
   const {
@@ -15,23 +16,21 @@ const Cart = () => {
     setCounter,
   } = useCart();
 
-  const { addProductToWish } = useWishlist();
+  const { addProductToWish, checkProductInWish } = useWishlist();
+
+  const { favoriteHover, setFavoriteHover } = useWishlist();
 
   useEffect(() => {
     getCart();
   }, []);
 
-  const cartCleaner = () => {
-    localStorage.removeItem("cart");
-    getCart();
-  };
   return (
     <Box
       sx={{
         width: { xs: "100%", md: "70%" },
         borderTop: "1px solid lightgrey",
         padding: { xs: 0, md: 2 },
-        pt: 4,
+        pt: { xs: 4, md: 4 },
       }}
     >
       <table>
@@ -132,11 +131,27 @@ const Cart = () => {
                       </Box>
                     )}
                     <Box
-                      onClick={() => addProductToWish(row.item)}
+                      onClick={() => {
+                        addProductToWish(row.item);
+                        deleteCartProduct(row.item.id);
+                      }}
                       sx={{ display: "flex", mt: 3 }}
                     >
-                      <FavoriteBorderIcon sx={{ cursor: "pointer" }} />
+                      {favoriteHover === row.item.id ? (
+                        <FavoriteIcon
+                          sx={{ cursor: "pointer" }}
+                          onMouseOut={() => setFavoriteHover("")}
+                        />
+                      ) : (
+                        <FavoriteBorderIcon
+                          sx={{ cursor: "pointer" }}
+                          onMouseOver={() => setFavoriteHover(row.item.id)}
+                        />
+                      )}
+
                       <Typography
+                        onMouseOver={() => setFavoriteHover(row.item.id)}
+                        onMouseOut={() => setFavoriteHover("")}
                         sx={{ fontSize: 15, ml: 1, cursor: "pointer" }}
                       >
                         Move to wishlist
@@ -144,7 +159,10 @@ const Cart = () => {
                     </Box>
                   </Box>
                   <Box>
-                    <ClearIcon onClick={() => deleteCartProduct(row.item.id)} />
+                    <ClearIcon
+                      sx={{ cursor: "pointer" }}
+                      onClick={() => deleteCartProduct(row.item.id)}
+                    />
                   </Box>
                 </Box>
               </td>
@@ -158,6 +176,12 @@ const Cart = () => {
                 >
                   <img width={"40%"} src={row.item.img1} alt="" />
                   <Box sx={{ ml: 2 }}>
+                    <Box sx={{display:'flex', justifyContent:'flex-end'}}>
+                      <ClearIcon
+                        sx={{ cursor: "pointer" }}
+                        onClick={() => deleteCartProduct(row.item.id)}
+                      />
+                    </Box>
                     <Box sx={{ mt: 4 }}>
                       <Typography sx={{ fontWeight: 600 }}>
                         {row.item.title}
