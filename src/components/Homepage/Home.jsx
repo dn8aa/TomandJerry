@@ -75,6 +75,7 @@ const Home = () => {
               sx={{
                 fontSize: "45px",
                 fontWeight: "bolder",
+                // marginLeft: "20%",
                 // fontSize: { sx: "35%" },
                 // fontSize: { sx: "35%" },
               }}
