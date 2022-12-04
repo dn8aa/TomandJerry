@@ -6,7 +6,8 @@ import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import { Link } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import "./Home.css";
+
+import "./home.css";
 import { breakpoints } from "@mui/system";
 const Home = () => {
   // const theme = createTheme({
