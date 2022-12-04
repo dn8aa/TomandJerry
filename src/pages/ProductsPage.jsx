@@ -47,11 +47,11 @@ const ProductsPage = () => {
   return (
     <Box
       sx={{
+        m: { xs: 1, sm: 5 },
         mt: 0,
-        m: { xs: 0, sm: 5 },
         p: 4,
-        px: { xs: 2, sm: 4 },
-        pt: 10,
+        px: { xs: 3, sm: 4 },
+        pt: 8,
         display: "flex",
         flexDirection: "column",
       }}
@@ -87,18 +87,22 @@ const ProductsPage = () => {
             sx={{
               display: "flex",
               flexDirection: { xs: "column", sm: "row" },
-              width: { xs: "100%", sm: "40%" },
-              justifyContent:'center'
+              width: { xs: "100%", sm: "50%" },
+              justifyContent: "center",
+              alignItems: "flex-start",
+              alignContext: "flex-start",
             }}
           >
             {" "}
             <ProductSort />
-            <Box sx={{ width: { xs: "90%", sm: "70%" } }}>
+            <Box
+              sx={{ width: { xs: "100%", sm: "100%" }, mt: { xs: 2, sm: 0 } }}
+            >
               <TextField
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="find item"
-                sx={{ ml: 3, width: { xs: "60%", sm: "50%" } }}
+                sx={{ ml: 3, width: { xs: "75%", sm: "60%" } }}
                 size="small"
               />
               <SearchIcon

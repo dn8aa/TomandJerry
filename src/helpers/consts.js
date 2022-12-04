@@ -14,3 +14,5 @@ export const WISH = {
   GET_WISH: "GET_WISH",
   GET_WISH_LENGTH: "GET_WISH_LENGTH",
 };
+
+export const ADMIN = "admin@gmail.com";

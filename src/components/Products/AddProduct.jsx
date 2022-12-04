@@ -30,68 +30,73 @@ const AddProduct = () => {
     }
   };
   return (
-    <Box sx={{ mt: 10 }}>
-      <TextField
-        onChange={handleInp}
-        sx={{ m: 1 }}
-        label="title"
-        fullWidth
-        variant="outlined"
-        name="title"
-      />
-      <TextField
-        onChange={handleInp}
-        sx={{ m: 1 }}
-        label="description"
-        fullWidth
-        variant="outlined"
-        name="description"
-      />{" "}
-      <TextField
-        onChange={handleInp}
-        sx={{ m: 1 }}
-        label="price"
-        fullWidth
-        variant="outlined"
-        name="price"
-      />
-      <TextField
-        onChange={handleInp}
-        sx={{ m: 1 }}
-        label="type"
-        fullWidth
-        variant="outlined"
-        name="type"
-      />
-      <TextField
-        onChange={handleInp}
-        sx={{ m: 1 }}
-        label="img1"
-        fullWidth
-        variant="outlined"
-        name="img1"
-      />
-      <TextField
-        onChange={handleInp}
-        sx={{ m: 1 }}
-        label="img2"
-        fullWidth
-        variant="outlined"
-        name="img2"
-      />
+    <Box sx={{ mt: 10, width: { xs: "90%", md: "50%", lg: "30%" } }}>
+      <Box sx={{ width: "100%" }}>
+        <TextField
+          onChange={handleInp}
+          sx={{ mb: 1 }}
+          label="title"
+          fullWidth
+          variant="outlined"
+          name="title"
+        />
+        <TextField
+          onChange={handleInp}
+          sx={{ mb: 1 }}
+          label="description"
+          fullWidth
+          variant="outlined"
+          name="description"
+        />{" "}
+        <TextField
+          onChange={handleInp}
+          sx={{ mb: 1 }}
+          label="price"
+          fullWidth
+          variant="outlined"
+          name="price"
+        />
+        <TextField
+          onChange={handleInp}
+          sx={{ mb: 1 }}
+          label="type"
+          fullWidth
+          variant="outlined"
+          name="type"
+        />
+        <TextField
+          onChange={handleInp}
+          sx={{ mb: 1 }}
+          label="img1"
+          fullWidth
+          variant="outlined"
+          name="img1"
+        />
+        <TextField
+          onChange={handleInp}
+          sx={{ mb: 1 }}
+          label="img2"
+          fullWidth
+          variant="outlined"
+          name="img2"
+        />
+      </Box>
       <Button
         onClick={() => {
           addProduct(product);
           navigate("/products");
         }}
         sx={{
-          borderColor: "black",
-          backgroundColor: "#0B1F4F",
-          color: "white",
-          transition: "1000s",
-          gridColumn: "1/3",
+        p:2,
+          backgroundColor: "black",
+          ":hover": {
+            backgroundColor: "white",
+            border: "1px solid green",
+            color: "green",
+            boxShadow: "none",
+          },
         }}
-        variant="outlined"
+        variant="contained"
         fullWidth
         size="large"
       >

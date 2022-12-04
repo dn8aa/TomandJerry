@@ -5,17 +5,17 @@ import { useCart } from "../../contexts/CartContext";
 
 const Summary = () => {
   const { cart } = useCart();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
-    <Box sx={{ width: { xs: "100%", sm: "30%", m: 7 } }}>
-      <Typography sx={{ fontSize: 20, fontWeight:600 }}>Summary</Typography>
+    <Box sx={{ width: { xs: "100%",md:'60%',lg:'40%', }, mt:5, display:'flex', alignItems:'center', flexDirection:'column' }}>
+      <Typography sx={{ fontSize: 20, fontWeight: 600 }}>Summary</Typography>
 
       {cart.products.map((row) => (
         <Box
           sx={{
             display: "flex",
             justifyContent: "space-between",
-            width: "60%",
+            width: { xs: "80%", md:'60%' },
             alignItems: "center",
             mt: 2,
           }}
@@ -36,7 +36,7 @@ const Summary = () => {
         sx={{
           display: "flex",
           justifyContent: "space-between",
-          width: "60%",
+          width: { xs: "80%", md:'60%' },
           alignItems: "center",
           mt: 2,
           borderBottom: "1px lightgrey solid",
@@ -52,7 +52,7 @@ const Summary = () => {
         sx={{
           display: "flex",
           justifyContent: "space-between",
-          width: "60%",
+          width: { xs: "80%", md:'60%' },
           alignItems: "center",
           mt: 2,
 
@@ -67,13 +67,13 @@ const Summary = () => {
       <Button
         variant="contained"
         sx={{
-          width: "60%",
+          width: { xs: "80%", md:'60%' },
           backgroundColor: "black",
           ":hover": {
             backgroundColor: "white",
             color: "black",
             boxShadow: "none",
-            width: "60%",
+            width: { xs: "80%", md:'60%' },
           },
         }}
       >
@@ -81,20 +81,20 @@ const Summary = () => {
       </Button>
       <Button
         variant="black"
-        onClick={()=> navigate('/cart')}
+        onClick={() => navigate("/cart")}
         sx={{
-            border:'1px lightgrey solid',
-          width: "60%",
-            mt:2,
+          border: "1px lightgrey solid",
+          width:  { xs: "80%", md:'60%' },
+          mt: 2,
           ":hover": {
             backgroundColor: "lightgrey",
             color: "white",
             boxShadow: "none",
-            width: "60%",
+            width: { xs: "80%", md:'60%' },
           },
         }}
       >
-       Go Back to Cart
+        Go Back to Cart
       </Button>
     </Box>
   );

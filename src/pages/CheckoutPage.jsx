@@ -12,7 +12,7 @@ const CheckoutPage = () => {
         p: 4,
         px: { xs: 2, sm: 4 },
         pt: 10,
-        display: { xs: "block", sm: "flex" },
+        display: { xs: "block", md: "flex" },
         justifyContent: "center",
       }}
     >

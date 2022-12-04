@@ -48,10 +48,15 @@ h1 {
   bottom: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.218);
+  z-index: 5;
 }
 
 .phone-details {
   display: none;
+}
+
+.auth-link {
+  color: #282c34;
 }
 
 @media screen and (max-width: 600px) {

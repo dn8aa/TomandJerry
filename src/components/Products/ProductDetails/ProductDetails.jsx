@@ -1,9 +1,11 @@
 import { Box, Button, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { useAuth } from "../../../contexts/AuthContext";
 import { useCart } from "../../../contexts/CartContext";
 import { useProducts } from "../../../contexts/ProductContextProvider";
 import { useWishlist } from "../../../contexts/WishlistContext";
+import { ADMIN } from "../../../helpers/consts";
 
 const ProductDetails = () => {
   const navigate = useNavigate();
@@ -15,7 +17,10 @@ const ProductDetails = () => {
   }, []);
 
   const { addProductToCart, checkProductInCart } = useCart();
-
+  const {
+    user: { email },
+    handleLogout,
+  } = useAuth();
   return (
     <Box sx={{ display: "flex", flexDirection: { xs: "column", md: "row" } }}>
       <Box
@@ -93,25 +98,33 @@ const ProductDetails = () => {
             Wishlist &#128150;
           </Button>
 
-          <Button
-            onClick={() => {
-              navigate(`/edit/${id}`);
-            }}
-            variant="black"
-            sx={{ border: "1px solid lightgrey", mt: 4 }}
-          >
-            edit
-          </Button>
-          <Button
-            onClick={() => {
-              deleteProduct(id);
-              navigate("/products");
-            }}
-            color="error"
-            sx={{ border: "1px solid lightgrey", mt: 1 }}
-          >
-            delete
-          </Button>
+          {email === ADMIN ? (
+            <Button
+              onClick={() => {
+                navigate(`/edit/${id}`);
+              }}
+              variant="black"
+              sx={{ border: "1px solid lightgrey", mt: 4 }}
+            >
+              edit
+            </Button>
+          ) : (
+            <></>
+          )}
+          {email === ADMIN ? (
+            <Button
+              onClick={() => {
+                deleteProduct(id);
+                navigate("/products");
+              }}
+              color="error"
+              sx={{ border: "1px solid lightgrey", mt: 1 }}
+            >
+              delete
+            </Button>
+          ) : (
+            <></>
+          )}
         </Box>
       </Box>
     </Box>
