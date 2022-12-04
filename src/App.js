@@ -14,7 +14,7 @@ function App() {
       <Navbar />
       <MainRoutes />
       <Footer />
-      {auth ? <AuthPage className='auth' /> : <></>}
+      {auth ? <AuthPage className="auth" /> : <></>}
     </Box>
   );
 }
