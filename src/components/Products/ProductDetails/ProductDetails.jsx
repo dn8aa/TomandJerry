@@ -3,10 +3,12 @@ import React, { useEffect } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { useCart } from "../../../contexts/CartContext";
 import { useProducts } from "../../../contexts/ProductContextProvider";
+import { useWishlist } from "../../../contexts/WishlistContext";
 
 const ProductDetails = () => {
   const navigate = useNavigate();
   const { getProductDetails, productDetails, deleteProduct } = useProducts();
+  const { addProductToWish } = useWishlist();
   const { id } = useParams();
   useEffect(() => {
     getProductDetails(id);
@@ -41,7 +43,9 @@ const ProductDetails = () => {
         <Typography sx={{ fontWeight: 600, fontSize: 22 }}>
           {productDetails.title}
         </Typography>
-        <Typography sx={{textAlign:{xs:'center', md:'center'}}}>{productDetails.description}</Typography>
+        <Typography sx={{ textAlign: { xs: "center", md: "center" } }}>
+          {productDetails.description}
+        </Typography>
 
         <Typography sx={{ fontSize: 22, fontWeight: 400, mt: 5, mb: 5 }}>
           ${productDetails.price}
@@ -81,7 +85,11 @@ const ProductDetails = () => {
               ADD TO BAG
             </Button>
           )}
-          <Button variant="black" sx={{ mt: 1, border: "1px lightgrey solid" }}>
+          <Button
+            onClick={() => addProductToWish(productDetails)}
+            variant="black"
+            sx={{ mt: 1, border: "1px lightgrey solid" }}
+          >
             Wishlist &#128150;
           </Button>
 

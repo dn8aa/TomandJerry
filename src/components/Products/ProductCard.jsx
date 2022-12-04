@@ -4,10 +4,12 @@ import React, { useState } from "react";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { useNavigate } from "react-router-dom";
+import { useWishlist } from "../../contexts/WishlistContext";
 
 const ProductCard = ({ item }) => {
   const { img, setImg } = useProducts();
   const navigate = useNavigate();
+  const { addProductToWish } = useWishlist();
   return (
     <Box
       onClick={() => navigate(`/products/${item.id}`)}
@@ -16,7 +18,7 @@ const ProductCard = ({ item }) => {
         display: "flex",
         flexDirection: "column",
         width: { xs: "216px", lg: "270px" },
-        height: 'fit-content',
+        height: "fit-content",
       }}
     >
       <Box
@@ -53,7 +55,10 @@ const ProductCard = ({ item }) => {
               transition: "0.3s",
             }}
           >
-            <FavoriteBorderIcon sx={{ m: 1 }} />
+            <FavoriteBorderIcon
+              onClick={() => addProductToWish(item)}
+              sx={{ m: 1 }}
+            />
           </Box>
         )}
         {/* 

@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { useCart } from "../../contexts/CartContext";
 import ClearIcon from "@mui/icons-material/Clear";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import { useWishlist } from "../../contexts/WishlistContext";
 
 const Cart = () => {
   const {
@@ -13,6 +14,8 @@ const Cart = () => {
     counter,
     setCounter,
   } = useCart();
+
+  const { addProductToWish } = useWishlist();
 
   useEffect(() => {
     getCart();
@@ -128,7 +131,10 @@ const Cart = () => {
                         </Typography>
                       </Box>
                     )}
-                    <Box sx={{ display: "flex", mt: 3 }}>
+                    <Box
+                      onClick={() => addProductToWish(row.item)}
+                      sx={{ display: "flex", mt: 3 }}
+                    >
                       <FavoriteBorderIcon sx={{ cursor: "pointer" }} />
                       <Typography
                         sx={{ fontSize: 15, ml: 1, cursor: "pointer" }}
@@ -143,14 +149,22 @@ const Cart = () => {
                 </Box>
               </td>
               <td className="phone-details">
-                <Box sx={{ display: "flex", justifyContent:'center', alignItems:'center' }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
                   <img width={"40%"} src={row.item.img1} alt="" />
-                  <Box sx={{ml:2}}>
+                  <Box sx={{ ml: 2 }}>
                     <Box sx={{ mt: 4 }}>
                       <Typography sx={{ fontWeight: 600 }}>
                         {row.item.title}
                       </Typography>
-                      <Typography sx={{fontSize:13}}>{row.item.description}</Typography>
+                      <Typography sx={{ fontSize: 13 }}>
+                        {row.item.description}
+                      </Typography>
                     </Box>
                     <Box>
                       {" "}
@@ -219,7 +233,10 @@ const Cart = () => {
                           </Typography>
                         </Box>
                       )}
-                      <Box sx={{ display: "flex", mt: 3 }}>
+                      <Box
+                        onClick={() => addProductToWish(row.item)}
+                        sx={{ display: "flex", mt: 3 }}
+                      >
                         <FavoriteBorderIcon sx={{ cursor: "pointer" }} />
                         <Typography
                           sx={{ fontSize: 15, ml: 1, cursor: "pointer" }}
