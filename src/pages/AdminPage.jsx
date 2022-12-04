@@ -5,7 +5,7 @@ import AddProduct from "../components/Products/AddProduct";
 
 const AdminPage = () => {
   return (
-    <Box sx={{ m: 10, mt: 10 }}>
+    <Box sx={{ m: {xs:3, sm:10}, mt: 10, display:'flex',justifyContent:'center' }}>
       <AddProduct />
     </Box>
   );
