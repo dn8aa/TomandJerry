@@ -7,15 +7,15 @@ import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import { Link } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-import "./home.css";
+// import "./home.css";
 import { breakpoints } from "@mui/system";
 const Home = () => {
   const theme = createTheme({
     breakpoints: {
       values: {
-        sx: 375,
-        sm: 750,
-        md: 960,
+        xs: 375,
+        sm: 600,
+        md: 900,
         lg: 1200,
         xl: 1536,
       },
@@ -31,8 +31,9 @@ const Home = () => {
             display: "flex",
             justifyContent: "space-around",
             margin: "10%",
-            // display: { sx: "none", md: "flex" },
-            // width: { sx: "80%", md: "85%" },
+            // width: { xs: "100%" },
+            // textAlign: { xs: "center", md:  },
+            // margin: { xs: "0 auto" },
           }}
         >
           <Box
@@ -40,8 +41,7 @@ const Home = () => {
             sx={{
               width: "60%",
               marginLeft: "-8%",
-              // width: { sx: "12px" },
-              // marginLeft: { sx: "21px" },
+              // display: "none",
             }}
           >
             <img
@@ -58,6 +58,10 @@ const Home = () => {
               marginTop: "10%",
               // width: { sx: "100%" },
               marginLeft: "10%",
+              // marginTop: { xs: "100%", md: "60%" },
+              // fontSize: { xs: "2px", md: "2px" },
+              // textAlign: "center",
+              // width: { xs: "100%", md: "100%" },
             }}
           >
             <Typography
@@ -66,8 +70,8 @@ const Home = () => {
               sx={{
                 fontSize: "45px",
                 fontWeight: "bolder",
-                // fontSize: { sx: "35%" },
-                // fontSize: { sx: "35%" },
+                // fontSize: { xs: "25px" },
+                // width: { xs: "90%" },
               }}
             >
               CYBER MONDAY: GET AN EXTRA 20% OFF SALE
@@ -75,10 +79,12 @@ const Home = () => {
             <Typography
               sx={{
                 marginTop: "8%",
-                fontSize: "19px",
+                fontSize: "20px",
                 width: "100%",
-                // width: { sx: "90%" },
-                // marginTop: { sx: "35%" },
+                // fontSize: { xs: "18px" },
+                // margin: { xs: "0 auto" },
+                // paddingTop: { xs: "15px" },
+                // marginLeft: { xs: "-5%" },
               }}
             >
               Don't miss out - selected items have an extra 20% off for Cyber
@@ -86,7 +92,12 @@ const Home = () => {
               applied at checkout
             </Typography>
             <Button
-              sx={{ backgroundColor: "white", color: "black", marginTop: "5%" }}
+              sx={{
+                backgroundColor: "white",
+                color: "black",
+                marginTop: "5%",
+                // marginLeft: { xs: "-10%" },
+              }}
             >
               Shop Now
             </Button>
@@ -100,8 +111,6 @@ const Home = () => {
             justifyContent: "space-around",
             margin: "4%",
             alignItems: "center",
-            // display: { sx: "none" },
-            // width: { sx: "10%" },
           }}
         >
           <Box
@@ -110,12 +119,26 @@ const Home = () => {
           >
             <Typography
               variant="h4"
-              sx={{ fontSize: "25px", fontWeight: "100", width: "70%" }}
+              sx={{
+                fontSize: "25px",
+                fontWeight: "100",
+                width: "70%",
+                // fontSize: { xs: "36px" },
+                // width: { xs: "80%" },
+                // marginLeft: { xs: "9%" },
+              }}
             >
               The party sneaker wishlish
             </Typography>
             <Typography
-              sx={{ marginTop: "8%", fontSize: "19px", width: "70%" }}
+              sx={{
+                marginTop: "8%",
+                fontSize: "19px",
+                width: "70%",
+                // width: { xs: "100%" },
+                // marginBottom: { xs: "12%" },
+                // alignItems: { xs: "center" },
+              }}
               className="the_secondly_homePage"
             >
               Traditional dressed-up vibes arent't for everyone. Get acquaintet
@@ -129,6 +152,9 @@ const Home = () => {
                 color: "black",
                 marginTop: "5%",
                 marginLeft: "-30%",
+                // marginLeft: { xs: "-1%" },
+                // marginTop: { xs: "-65px" },
+                // marginBottom: { xs: "-12px" },
               }}
             >
               shop Now
@@ -138,6 +164,7 @@ const Home = () => {
             sx={{
               width: "80%",
               marginLeft: "-12%",
+              // display: { xs: "none" },
             }}
             className="the_secondly_homePage_right"
           >
@@ -178,13 +205,27 @@ const Home = () => {
             className="the_fourtly_homePage_left"
             sx={{ textAlign: "center", width: "70%" }}
           >
-            <Typography variant="h2" sx={{}}>
+            <Typography
+              variant="h2"
+              // sx={{ fontSize: { xs: "18px" } }} //marginTop: { xs: "-182%" }
+            >
               PEAK YOUR PERFORMANCE
             </Typography>
             <Button>Shop Zegna</Button>
           </Box>
-          <Box className="the_fourtly_homePage_right">
-            <img style={{ width: "95%" }} src={dastan} alt="" />
+
+          <Box
+            className="the_fourtly_homePage_right"
+            // sx={{ display: { xs: "none" } }}
+          >
+            <img
+              className=""
+              style={{
+                width: "95%",
+              }}
+              src={dastan}
+              alt=""
+            />
           </Box>
         </Box>
 
@@ -313,9 +354,18 @@ const Home = () => {
             display: "flex",
             justifyContent: "space-between",
             margin: "6%",
+            // display: { xs: "none" },
           }}
         >
-          <Box className="lett_helping" sx={{ width: "30%" }}>
+          <Box
+            className="lett_helping"
+            sx={{
+              width: "30%",
+              // width: { xs: "100%" },
+              // textAlign: { xs: "center" },
+              // display: { xs: "flex-wrap" },
+            }}
+          >
             <Link href="">
               <AddShoppingCartIcon sx={{ fill: "black" }} />
             </Link>
@@ -323,7 +373,17 @@ const Home = () => {
             <Typography>your guide to shopping and placing orders</Typography>
           </Box>
 
-          <Box className="center_helping" sx={{ width: "30%" }}>
+          <Box
+            className="center_helping"
+            sx={
+              {
+                // width: "30%",
+                // width: { xs: "60%" },
+                // textAlign: "center",
+                // marginLeft: "40%",
+              }
+            }
+          >
             <Link href="">
               <HelpOutlineIcon sx={{ fill: "black" }} />
             </Link>
