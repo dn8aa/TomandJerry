@@ -10,3 +10,8 @@ export const calcTotalPrice = (products) => {
     return (acc += curr.subPrice);
   }, 0);
 };
+
+export function getCountWishesInCart() {
+  const wish = JSON.parse(localStorage.getItem("wish"));
+  return wish ? wish.products.length : 0;
+}

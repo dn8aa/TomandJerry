@@ -41,6 +41,7 @@ const ProductFilter = () => {
 
         // borderTop: '1px solid rgb(192, 192, 192)',
         border: "none",
+        width:'250px'
       }}
       expanded={expanded === "panel2"}
       onChange={handleChange("panel2")}
@@ -59,7 +60,7 @@ const ProductFilter = () => {
             fontWeight: "bold",
             padding: "7px 0",
             [theme.breakpoints.down("md")]: {
-              fontSize: "0.8rem",
+              fontSize: 20,
             },
           }}
         >

@@ -47,16 +47,23 @@ const ProductsPage = () => {
   return (
     <Box
       sx={{
+        m: { xs: 1, sm: 5 },
         mt: 0,
-        m: 5,
         p: 4,
-        pt: 10,
+        px: { xs: 3, sm: 4 },
+        pt: 8,
         display: "flex",
         flexDirection: "column",
       }}
     >
       <Box>
-        <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            flexDirection: { xs: "column", sm: "row" },
+          }}
+        >
           <Box
             sx={{
               display: "flex",
@@ -76,15 +83,26 @@ const ProductsPage = () => {
               Filter {filter ? <>&#707;</> : <>&#60;</>}
             </Typography>
           </Box>
-          <Box sx={{ display: "flex" }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: { xs: "column", sm: "row" },
+              width: { xs: "100%", sm: "50%" },
+              justifyContent: "center",
+              alignItems: "flex-start",
+              alignContext: "flex-start",
+            }}
+          >
             {" "}
             <ProductSort />
-            <Box>
+            <Box
+              sx={{ width: { xs: "100%", sm: "100%" }, mt: { xs: 2, sm: 0 } }}
+            >
               <TextField
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="find item"
-                sx={{ ml: 3 }}
+                sx={{ ml: 3, width: { xs: "75%", sm: "60%" } }}
                 size="small"
               />
               <SearchIcon
@@ -95,14 +113,10 @@ const ProductsPage = () => {
             </Box>
           </Box>
         </Box>
-        <Box sx={{ display: "flex" }}>
-          {filter ? (
-            <Box sx={{ width: "250px" }}>
-              <ProductFilter />
-            </Box>
-          ) : (
-            <></>
-          )}
+        <Box
+          sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" } }}
+        >
+          {filter ? <ProductFilter /> : <></>}
 
           <ProductList currentData={currentData} />
         </Box>

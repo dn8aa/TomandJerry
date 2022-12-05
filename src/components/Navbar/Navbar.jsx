@@ -20,11 +20,16 @@ import { useNavigate } from "react-router-dom";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import { useAuth } from "../../contexts/AuthContext";
 import { TextField } from "@mui/material";
+import { ADMIN } from "../../helpers/consts";
 
 const drawerWidth = 240;
 
 function Navbar(props) {
   const { auth, setAuth } = useAuth();
+  const {
+    user: { email },
+    handleLogout,
+  } = useAuth();
 
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -54,12 +59,16 @@ function Navbar(props) {
           </ListItemButton>
         </ListItem>
         <ListItem>
-          <ListItemButton
-            onClick={() => navigate("/admin")}
-            sx={{ textAlign: "center" }}
-          >
-            <ListItemText primary="ADMIN" />
-          </ListItemButton>
+          {email === ADMIN ? (
+            <ListItemButton
+              onClick={() => navigate("/admin")}
+              sx={{ textAlign: "center" }}
+            >
+              <ListItemText primary="ADMIN" />
+            </ListItemButton>
+          ) : (
+            <></>
+          )}
         </ListItem>
         <ListItem>
           {" "}
@@ -70,6 +79,32 @@ function Navbar(props) {
             <ListItemText primary="ABOUT US" />
           </ListItemButton>
         </ListItem>
+
+        <Box
+          sx={{
+            width: "90%",
+            display: "flex",
+            justifyContent: "space-around",
+            alignItems: "center",
+          }}
+        >
+          {" "}
+          <PersonOutlineOutlinedIcon
+            onClick={() => {
+              setAuth(!auth);
+              handleLogout();
+            }}
+            sx={{ cursor: "pointer" }}
+          />
+          <FavoriteBorderOutlinedIcon
+            onClick={() => navigate("/wishlist")}
+            sx={{ cursor: "pointer" }}
+          />
+          <LocalMallOutlinedIcon
+            onClick={() => navigate("/cart")}
+            sx={{ cursor: "pointer" }}
+          />
+        </Box>
       </List>
     </Box>
   );
@@ -78,25 +113,34 @@ function Navbar(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex", width: "100%", justifyContent: "flex-start" }}>
       <AppBar
         component="nav"
-        sx={{ backgroundColor: "white", boxShadow: "none", color: "black" }}
+        sx={{
+          backgroundColor: "white",
+          boxShadow: "none",
+          color: "black",
+          padding: 0,
+        }}
       >
-        <Toolbar sx={{ padding: 0 }}>
-          <Box sx={{ width: "33%", display: { xs: "none", sm: "block" } }}>
+        <Toolbar sx={{ padding: 0, width: "100%" }}>
+          <Box sx={{ width: "32%", display: { xs: "none", sm: "block" } }}>
             <Button
               onClick={() => navigate("/products")}
               sx={{ p: { xs: 0, lg: 2 }, color: "black" }}
             >
               PRODUCTS
             </Button>{" "}
-            <Button
-              onClick={() => navigate("/admin")}
-              sx={{ p: { xs: 0, lg: 2 }, color: "black" }}
-            >
-              ADMIN
-            </Button>{" "}
+            {email === ADMIN ? (
+              <Button
+                onClick={() => navigate("/admin")}
+                sx={{ p: { xs: 0, lg: 2 }, color: "black" }}
+              >
+                ADMIN
+              </Button>
+            ) : (
+              <></>
+            )}
           </Box>
           <IconButton
             color="inherit"
@@ -113,7 +157,7 @@ function Navbar(props) {
             component="div"
             sx={{
               cursor: "pointer",
-              width: "33%",
+              width: "32%",
               textAlign: "center",
               flexGrow: 1,
               display: { xs: "none", sm: "block" },
@@ -128,7 +172,7 @@ function Navbar(props) {
             variant="h6"
             sx={{
               display: { xs: "block", sm: "none" },
-              width: { xs: "33%", sm: "50%" },
+              width: "33%",
               my: 2,
               fontWeight: 700,
               fontSize: "30px",
@@ -140,27 +184,64 @@ function Navbar(props) {
 
           <Box
             sx={{
-              width: { xs: "33%", sm: "33%" },
-              display: "flex",
+              width: "32%",
+              display: { xs: "none", sm: "flex" },
               justifyContent: "right",
               alignItems: "center",
-              paddingRight: 2,
+              paddingRight: 6,
             }}
           >
-            <PersonOutlineOutlinedIcon
-              onClick={() => {
-                setAuth(!auth);
-              }}
-              sx={{ m: 1, cursor: "pointer" }}
-            />
+            {email ? (
+              <PersonOutlineOutlinedIcon
+                onClick={() => {
+                  setAuth(!auth);
+                  handleLogout();
+                }}
+                sx={{
+                  m: 1,
+
+                  padding: 1,
+                  cursor: "pointer",
+                  ":hover": {
+                    backgroundColor: "white",
+                    border: "1px solid red",
+                    borderRadius: "50%",
+                    padding: 1,
+                    color: "red",
+                    boxShadow: "none",
+                  },
+                }}
+              />
+            ) : (
+              <PersonOutlineOutlinedIcon
+                onClick={() => {
+                  setAuth(!auth);
+                  handleLogout();
+                }}
+                sx={{
+                  m: 1,
+
+                  padding: 1,
+                  cursor: "pointer",
+                  ":hover": {
+                    backgroundColor: "white",
+                    border: "1px solid green",
+                    borderRadius: "50%",
+                    padding: 1,
+                    color: "green",
+                    boxShadow: "none",
+                  },
+                }}
+              />
+            )}
 
             <FavoriteBorderOutlinedIcon
               onClick={() => navigate("/wishlist")}
-              sx={{ m: 1, cursor: "pointer" }}
+              sx={{ m: 1, cursor: "pointer", p: 1 }}
             />
             <LocalMallOutlinedIcon
               onClick={() => navigate("/cart")}
-              sx={{ m: 1, cursor: "pointer" }}
+              sx={{ m: 1, cursor: "pointer", p: 1 }}
             />
           </Box>
         </Toolbar>

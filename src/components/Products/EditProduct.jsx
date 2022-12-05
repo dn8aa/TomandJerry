@@ -26,10 +26,10 @@ const EditProduct = () => {
     setProduct(obj);
   };
   return (
-    <Box sx={{ mt: 10 }}>
+    <Box sx={{ mt: 10, width: { xs: "90%", md: "50%", lg: "30%" } }}>
       <TextField
         onChange={handleInp}
-        sx={{ m: 1 }}
+        sx={{ mb: 1 }}
         label="title"
         fullWidth
         variant="outlined"
@@ -38,7 +38,7 @@ const EditProduct = () => {
       />
       <TextField
         onChange={handleInp}
-        sx={{ m: 1 }}
+        sx={{ mb: 1 }}
         label="description"
         fullWidth
         variant="outlined"
@@ -47,7 +47,7 @@ const EditProduct = () => {
       />{" "}
       <TextField
         onChange={handleInp}
-        sx={{ m: 1 }}
+        sx={{ mb: 1 }}
         label="price"
         fullWidth
         variant="outlined"
@@ -56,7 +56,7 @@ const EditProduct = () => {
       />
       <TextField
         onChange={handleInp}
-        sx={{ m: 1 }}
+        sx={{ mb: 1 }}
         label="type"
         fullWidth
         variant="outlined"
@@ -65,7 +65,7 @@ const EditProduct = () => {
       />
       <TextField
         onChange={handleInp}
-        sx={{ m: 1 }}
+        sx={{ mb: 1 }}
         label="img1"
         fullWidth
         variant="outlined"
@@ -74,7 +74,7 @@ const EditProduct = () => {
       />
       <TextField
         onChange={handleInp}
-        sx={{ m: 1 }}
+        sx={{ mb: 1 }}
         label="img2"
         fullWidth
         variant="outlined"
@@ -87,17 +87,20 @@ const EditProduct = () => {
           navigate("/products");
         }}
         sx={{
-          borderColor: "black",
-          backgroundColor: "#0B1F4F",
-          color: "white",
-          transition: "1000s",
-          gridColumn: "1/3",
-        }}
-        variant="outlined"
+          p:2,
+            backgroundColor: "black",
+            ":hover": {
+              backgroundColor: "white",
+              border: "1px solid green",
+              color: "green",
+              boxShadow: "none",
+            },
+          }}
+        variant="contained"
         fullWidth
         size="large"
       >
-       SAVE CHANGES
+        SAVE CHANGES
       </Button>
     </Box>
   );
