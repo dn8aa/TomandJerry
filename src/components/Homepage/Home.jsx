@@ -9,17 +9,6 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "./home.css";
 import { breakpoints } from "@mui/system";
 const Home = () => {
-  // const theme = createTheme({
-  //   breakpoints: {
-  //     values: {
-  //       xs: 375,
-  //       sm: 750,
-  //       md: 960,
-  //       lg: 1200,
-  //       xl: 1536,
-  //     },
-  //   },
-  // });
   const theme = createTheme({
     breakpoints: {
       values: {
@@ -49,7 +38,7 @@ const Home = () => {
             className="the_first_HomePage_left"
             sx={{
               width: "60%",
-              marginLeft: "-12%",
+              marginLeft: "-8%",
               // width: { sx: "12px" },
               // marginLeft: { sx: "21px" },
             }}
@@ -67,6 +56,7 @@ const Home = () => {
               width: "40%",
               marginTop: "10%",
               // width: { sx: "100%" },
+              marginLeft: "10%",
             }}
           >
             <Typography
@@ -75,7 +65,6 @@ const Home = () => {
               sx={{
                 fontSize: "45px",
                 fontWeight: "bolder",
-                // marginLeft: "20%",
                 // fontSize: { sx: "35%" },
                 // fontSize: { sx: "35%" },
               }}
