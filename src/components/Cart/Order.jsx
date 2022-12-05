@@ -13,7 +13,7 @@ const Order = () => {
         width: { xs: "100%", md: "30%" },
         boxSizing: "border-box",
         padding: { xs: 0, md: 6 },
-        mt:{xs:6, md:0}
+        mt: { xs: 6, md: 0 },
       }}
     >
       <Typography sx={{ fontWeight: 600, fontSize: 18 }}>Summary</Typography>
@@ -54,6 +54,9 @@ const Order = () => {
           color: "white",
           p: 1,
           mt: 2,
+          ":hover": {
+            color: "black",
+          },
         }}
       >
         Go to Checkout
