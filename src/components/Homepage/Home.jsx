@@ -6,27 +6,16 @@ import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import { Link } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import "./homePage.css";
 
-import "./home.css";
 import { breakpoints } from "@mui/system";
 const Home = () => {
-  // const theme = createTheme({
-  //   breakpoints: {
-  //     values: {
-  //       xs: 375,
-  //       sm: 750,
-  //       md: 960,
-  //       lg: 1200,
-  //       xl: 1536,
-  //     },
-  //   },
-  // });
   const theme = createTheme({
     breakpoints: {
       values: {
-        sx: 375,
-        sm: 750,
-        md: 960,
+        xs: 375,
+        sm: 600,
+        md: 900,
         lg: 1200,
         xl: 1536,
       },
@@ -40,22 +29,24 @@ const Home = () => {
           className="the_first_HomePage"
           sx={{
             display: "flex",
+            flexDirection: { lg: "row", xs: "column" },
             justifyContent: "space-around",
             margin: "10%",
-            // display: { sx: "none", md: "flex" },
-            // width: { sx: "80%", md: "85%" },
+            // width: { xs: "100%" },
+            // textAlign: { xs: "center", md:  },
+            // margin: { xs: "0 auto" },
           }}
         >
           <Box
             className="the_first_HomePage_left"
             sx={{
-              width: "60%",
-              marginLeft: "-12%",
-              // width: { sx: "12px" },
-              // marginLeft: { sx: "21px" },
+              width: { lg: "60%", xs: "100%" },
+              // width: "60%",
+              marginLeft: { xs: "0", lg: "-8%" },
             }}
           >
             <img
+              style={{ width: "100%" }}
               className="first_image"
               src="https://cdn-static.farfetch-contents.com/cms-cm10/caas/v1/media/4067010/data/f1c35419eab93bcecda653e2580deacf/1x1_messaging-side/637/data.png"
               alt=""
@@ -67,7 +58,9 @@ const Home = () => {
               textAlign: "center",
               width: "40%",
               marginTop: "10%",
-              // width: { sx: "100%" },
+              marginLeft: "10%",
+              marginLeft: { xs: "-4%", lg: "10%" },
+              width: { xs: "100", lg: "40%" },
             }}
           >
             <Typography
@@ -76,9 +69,7 @@ const Home = () => {
               sx={{
                 fontSize: "45px",
                 fontWeight: "bolder",
-                // marginLeft: "20%",
-                // fontSize: { sx: "35%" },
-                // fontSize: { sx: "35%" },
+                fontSize: { xs: "20px", lg: "45px" },
               }}
             >
               CYBER MONDAY: GET AN EXTRA 20% OFF SALE
@@ -86,10 +77,8 @@ const Home = () => {
             <Typography
               sx={{
                 marginTop: "8%",
-                fontSize: "19px",
+                fontSize: "20px",
                 width: "100%",
-                // width: { sx: "90%" },
-                // marginTop: { sx: "35%" },
               }}
             >
               Don't miss out - selected items have an extra 20% off for Cyber
@@ -97,7 +86,11 @@ const Home = () => {
               applied at checkout
             </Typography>
             <Button
-              sx={{ backgroundColor: "white", color: "black", marginTop: "5%" }}
+              sx={{
+                backgroundColor: "white",
+                color: "black",
+                marginTop: "5%",
+              }}
             >
               Shop Now
             </Button>
@@ -107,26 +100,44 @@ const Home = () => {
         <Box
           className="the_secondly_homePage"
           sx={{
+            flexDirection: { xs: "column", lg: "row" },
             display: "flex",
             justifyContent: "space-around",
             margin: "4%",
             alignItems: "center",
-            // display: { sx: "none" },
-            // width: { sx: "10%" },
+            width: { xs: "100%", lg: "100%" },
           }}
         >
           <Box
             className="the_secondly_homePage_left"
-            sx={{ textAlign: "center" }}
+            sx={{
+              textAlign: "center",
+              // marginLeft: { lg: "-2%", xs: "12%" },
+            }}
           >
             <Typography
               variant="h4"
-              sx={{ fontSize: "25px", fontWeight: "100", width: "70%" }}
+              sx={{
+                fontSize: "25px",
+                fontWeight: "100",
+                width: "70%",
+                // fontSize: { xs: "36px" },
+                width: { xs: "90%", lg: "70%" },
+                // marginLeft: { xs: "9%" },
+              }}
             >
               The party sneaker wishlish
             </Typography>
             <Typography
-              sx={{ marginTop: "8%", fontSize: "19px", width: "70%" }}
+              sx={{
+                marginTop: "8%",
+                fontSize: "19px",
+                width: "70%",
+
+                width: { xs: "90%", lg: "70%" },
+                // marginBottom: { xs: "-220%", lg: "" },
+                // alignItems: { xs: "center" },
+              }}
               className="the_secondly_homePage"
             >
               Traditional dressed-up vibes arent't for everyone. Get acquaintet
@@ -140,6 +151,7 @@ const Home = () => {
                 color: "black",
                 marginTop: "5%",
                 marginLeft: "-30%",
+                marginLeft: { lg: "-30%", xs: "-10%" },
               }}
             >
               shop Now
@@ -149,10 +161,13 @@ const Home = () => {
             sx={{
               width: "80%",
               marginLeft: "-12%",
+              width: { lg: "80%", xs: "100%" },
+              marginLeft: { lg: "-12%", xs: "-1%" },
             }}
             className="the_secondly_homePage_right"
           >
             <img
+              style={{ width: "90%" }}
               className="second_image"
               src="https://cdn-static.farfetch-contents.com/cms-cm10/caas/v1/media/4065134/data/6e7c4e6dacb314e64f57b6915da86a67/1x1_messaging-side/637/data.jpeg"
               alt=""
@@ -183,19 +198,38 @@ const Home = () => {
 
         <Box
           className="the_fourtly_homepage"
-          sx={{ display: "flex", margin: "5", alignItems: "center" }}
+          sx={{
+            display: "flex",
+            margin: "5",
+            alignItems: "center",
+            display: { lg: "flex", xs: "none" },
+          }}
         >
           <Box
             className="the_fourtly_homePage_left"
             sx={{ textAlign: "center", width: "70%" }}
           >
-            <Typography variant="h2" sx={{}}>
+            <Typography
+              variant="h2"
+              // sx={{ fontSize: { xs: "18px" } }} //marginTop: { xs: "-182%" }
+            >
               PEAK YOUR PERFORMANCE
             </Typography>
             <Button>Shop Zegna</Button>
           </Box>
-          <Box className="the_fourtly_homePage_right">
-            <img style={{ width: "95%" }} src={dastan} alt="" />
+
+          <Box
+            className="the_fourtly_homePage_right"
+            sx={{ display: { xs: "none", lg: "flex" } }}
+          >
+            <img
+              className=""
+              style={{
+                width: "85%",
+              }}
+              src={dastan}
+              alt=""
+            />
           </Box>
         </Box>
 
@@ -324,19 +358,41 @@ const Home = () => {
             display: "flex",
             justifyContent: "space-between",
             margin: "6%",
+            // display: { xs: "none" },
           }}
         >
-          <Box className="lett_helping" sx={{ width: "30%" }}>
+          <Box
+            className="lett_helping"
+            sx={{
+              width: "30%",
+              // flexDirection: { lg: "colomn", xs: "row" },
+              // width: { xs: "100%" },
+              // textAlign: { xs: "center" },
+              // display: { xs: "flex-wrap" },
+            }}
+          >
             <Link href="">
-              <AddShoppingCartIcon sx={{ fill: "black" }} />
+              <AddShoppingCartIcon
+                sx={{ fill: "black", fontSize: { lg: "", xs: "2%" } }}
+              />
             </Link>
             <Typography variant="h6">HOW TO SHOP</Typography>
             <Typography>your guide to shopping and placing orders</Typography>
           </Box>
 
-          <Box className="center_helping" sx={{ width: "30%" }}>
+          <Box
+            className="center_helping"
+            sx={{
+              width: "30%",
+              // width: { xs: "60%" },
+              // textAlign: "center",
+              // marginLeft: "40%",
+            }}
+          >
             <Link href="">
-              <HelpOutlineIcon sx={{ fill: "black" }} />
+              <HelpOutlineIcon
+                sx={{ fill: "black", fontSize: { lg: "", xs: "2%" } }}
+              />
             </Link>
             <Typography variant="h6">FAQS</Typography>
             <Typography>Your questions answered</Typography>
@@ -344,7 +400,9 @@ const Home = () => {
 
           <Box className="right_helping" sx={{ width: "30%" }}>
             <Link href="">
-              <ChatBubbleOutlineIcon sx={{ fill: "black" }} />
+              <ChatBubbleOutlineIcon
+                sx={{ fill: "black", fontSize: { lg: "", xs: "2%" } }}
+              />
             </Link>
             <Typography variant="h6">NEED HELP</Typography>
             <Typography>contact our global Customer Service team</Typography>
