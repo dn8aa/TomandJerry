@@ -1,0 +1,17 @@
+/* @media all and (max-width: 375px) {
+  .first_image {
+    width: 121px;
+  }
+}
+@media all and (max-width: 425px) {
+  .first_image {
+    width: 470px;
+    margin-left: 17px;
+  }
+}
+@media all and (max-width: 768px) {
+  .first_image {
+    width: 715px;
+    height: 500px;
+  }
+} */

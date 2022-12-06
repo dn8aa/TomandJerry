@@ -6,8 +6,8 @@ import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
 import { Link } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import "./homePage.css";
 
-// import "./home.css";
 import { breakpoints } from "@mui/system";
 const Home = () => {
   const theme = createTheme({
@@ -29,6 +29,7 @@ const Home = () => {
           className="the_first_HomePage"
           sx={{
             display: "flex",
+            flexDirection: { lg: "row", xs: "column" },
             justifyContent: "space-around",
             margin: "10%",
             // width: { xs: "100%" },
@@ -39,12 +40,13 @@ const Home = () => {
           <Box
             className="the_first_HomePage_left"
             sx={{
-              width: "60%",
-              marginLeft: "-8%",
-              // display: "none",
+              width: { lg: "60%", xs: "100%" },
+              // width: "60%",
+              marginLeft: { xs: "0", lg: "-8%" },
             }}
           >
             <img
+              style={{ width: "100%" }}
               className="first_image"
               src="https://cdn-static.farfetch-contents.com/cms-cm10/caas/v1/media/4067010/data/f1c35419eab93bcecda653e2580deacf/1x1_messaging-side/637/data.png"
               alt=""
@@ -56,12 +58,9 @@ const Home = () => {
               textAlign: "center",
               width: "40%",
               marginTop: "10%",
-              // width: { sx: "100%" },
               marginLeft: "10%",
-              // marginTop: { xs: "100%", md: "60%" },
-              // fontSize: { xs: "2px", md: "2px" },
-              // textAlign: "center",
-              // width: { xs: "100%", md: "100%" },
+              marginLeft: { xs: "-4%", lg: "10%" },
+              width: { xs: "100", lg: "40%" },
             }}
           >
             <Typography
@@ -70,8 +69,7 @@ const Home = () => {
               sx={{
                 fontSize: "45px",
                 fontWeight: "bolder",
-                // fontSize: { xs: "25px" },
-                // width: { xs: "90%" },
+                fontSize: { xs: "20px", lg: "45px" },
               }}
             >
               CYBER MONDAY: GET AN EXTRA 20% OFF SALE
@@ -81,10 +79,6 @@ const Home = () => {
                 marginTop: "8%",
                 fontSize: "20px",
                 width: "100%",
-                // fontSize: { xs: "18px" },
-                // margin: { xs: "0 auto" },
-                // paddingTop: { xs: "15px" },
-                // marginLeft: { xs: "-5%" },
               }}
             >
               Don't miss out - selected items have an extra 20% off for Cyber
@@ -96,7 +90,6 @@ const Home = () => {
                 backgroundColor: "white",
                 color: "black",
                 marginTop: "5%",
-                // marginLeft: { xs: "-10%" },
               }}
             >
               Shop Now
@@ -107,15 +100,20 @@ const Home = () => {
         <Box
           className="the_secondly_homePage"
           sx={{
+            flexDirection: { xs: "column", lg: "row" },
             display: "flex",
             justifyContent: "space-around",
             margin: "4%",
             alignItems: "center",
+            width: { xs: "100%", lg: "100%" },
           }}
         >
           <Box
             className="the_secondly_homePage_left"
-            sx={{ textAlign: "center" }}
+            sx={{
+              textAlign: "center",
+              // marginLeft: { lg: "-2%", xs: "12%" },
+            }}
           >
             <Typography
               variant="h4"
@@ -124,7 +122,7 @@ const Home = () => {
                 fontWeight: "100",
                 width: "70%",
                 // fontSize: { xs: "36px" },
-                // width: { xs: "80%" },
+                width: { xs: "90%", lg: "70%" },
                 // marginLeft: { xs: "9%" },
               }}
             >
@@ -135,8 +133,9 @@ const Home = () => {
                 marginTop: "8%",
                 fontSize: "19px",
                 width: "70%",
-                // width: { xs: "100%" },
-                // marginBottom: { xs: "12%" },
+
+                width: { xs: "90%", lg: "70%" },
+                // marginBottom: { xs: "-220%", lg: "" },
                 // alignItems: { xs: "center" },
               }}
               className="the_secondly_homePage"
@@ -152,9 +151,7 @@ const Home = () => {
                 color: "black",
                 marginTop: "5%",
                 marginLeft: "-30%",
-                // marginLeft: { xs: "-1%" },
-                // marginTop: { xs: "-65px" },
-                // marginBottom: { xs: "-12px" },
+                marginLeft: { lg: "-30%", xs: "-10%" },
               }}
             >
               shop Now
@@ -164,11 +161,13 @@ const Home = () => {
             sx={{
               width: "80%",
               marginLeft: "-12%",
-              // display: { xs: "none" },
+              width: { lg: "80%", xs: "100%" },
+              marginLeft: { lg: "-12%", xs: "-1%" },
             }}
             className="the_secondly_homePage_right"
           >
             <img
+              style={{ width: "90%" }}
               className="second_image"
               src="https://cdn-static.farfetch-contents.com/cms-cm10/caas/v1/media/4065134/data/6e7c4e6dacb314e64f57b6915da86a67/1x1_messaging-side/637/data.jpeg"
               alt=""
@@ -199,7 +198,12 @@ const Home = () => {
 
         <Box
           className="the_fourtly_homepage"
-          sx={{ display: "flex", margin: "5", alignItems: "center" }}
+          sx={{
+            display: "flex",
+            margin: "5",
+            alignItems: "center",
+            display: { lg: "flex", xs: "none" },
+          }}
         >
           <Box
             className="the_fourtly_homePage_left"
@@ -216,12 +220,12 @@ const Home = () => {
 
           <Box
             className="the_fourtly_homePage_right"
-            // sx={{ display: { xs: "none" } }}
+            sx={{ display: { xs: "none", lg: "flex" } }}
           >
             <img
               className=""
               style={{
-                width: "95%",
+                width: "85%",
               }}
               src={dastan}
               alt=""
@@ -361,13 +365,16 @@ const Home = () => {
             className="lett_helping"
             sx={{
               width: "30%",
+              // flexDirection: { lg: "colomn", xs: "row" },
               // width: { xs: "100%" },
               // textAlign: { xs: "center" },
               // display: { xs: "flex-wrap" },
             }}
           >
             <Link href="">
-              <AddShoppingCartIcon sx={{ fill: "black" }} />
+              <AddShoppingCartIcon
+                sx={{ fill: "black", fontSize: { lg: "", xs: "2%" } }}
+              />
             </Link>
             <Typography variant="h6">HOW TO SHOP</Typography>
             <Typography>your guide to shopping and placing orders</Typography>
@@ -375,17 +382,17 @@ const Home = () => {
 
           <Box
             className="center_helping"
-            sx={
-              {
-                // width: "30%",
-                // width: { xs: "60%" },
-                // textAlign: "center",
-                // marginLeft: "40%",
-              }
-            }
+            sx={{
+              width: "30%",
+              // width: { xs: "60%" },
+              // textAlign: "center",
+              // marginLeft: "40%",
+            }}
           >
             <Link href="">
-              <HelpOutlineIcon sx={{ fill: "black" }} />
+              <HelpOutlineIcon
+                sx={{ fill: "black", fontSize: { lg: "", xs: "2%" } }}
+              />
             </Link>
             <Typography variant="h6">FAQS</Typography>
             <Typography>Your questions answered</Typography>
@@ -393,7 +400,9 @@ const Home = () => {
 
           <Box className="right_helping" sx={{ width: "30%" }}>
             <Link href="">
-              <ChatBubbleOutlineIcon sx={{ fill: "black" }} />
+              <ChatBubbleOutlineIcon
+                sx={{ fill: "black", fontSize: { lg: "", xs: "2%" } }}
+              />
             </Link>
             <Typography variant="h6">NEED HELP</Typography>
             <Typography>contact our global Customer Service team</Typography>
