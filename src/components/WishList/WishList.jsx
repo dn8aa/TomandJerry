@@ -6,10 +6,11 @@ import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { useWishlist } from "../../contexts/WishlistContext";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
+import LocalMallIcon from "@mui/icons-material/LocalMall";
 const WishList = () => {
   const { getWish, wish, changeProductCountWish, deleteWishProduct } =
     useWishlist();
-  const { addProductToCart } = useCart();
+  const { addProductToCart, checkProductInCart } = useCart();
 
   const { addProductToWish, checkProductInWish } = useWishlist();
 
@@ -64,25 +65,40 @@ const WishList = () => {
                     <Typography sx={{ fontWeight: 600, mb: "10%" }}>
                       One Size
                     </Typography>
-                    <Box
-                      onClick={() => {
-                        addProductToCart(row.item);
-                        deleteWishProduct(row.item.id);
-                      }}
-                      sx={{ display: "flex", mt: 3 }}
-                    >
-                      <LocalMallOutlinedIcon />
-                      <Typography
-                        sx={{
-                          fontSize: 15,
-                          cursor: "pointer",
-                          ":hover": { fontWeight: 600 },
-                          ml: 1,
+                    {checkProductInCart(row.item.id) ? (
+                      <Box sx={{ display: "flex", mt: 3 }}>
+                        <LocalMallIcon />
+                        <Typography
+                          sx={{
+                            cursor: "default",
+                            fontSize: 15,
+                            fontWeight: 600,
+                            ml: 1,
+                          }}
+                        >
+                          In Your Cart
+                        </Typography>
+                      </Box>
+                    ) : (
+                      <Box
+                        onClick={() => {
+                          addProductToCart(row.item);
                         }}
+                        sx={{ display: "flex", mt: 3 }}
                       >
-                        Add to Cart
-                      </Typography>
-                    </Box>
+                        <LocalMallOutlinedIcon />
+                        <Typography
+                          sx={{
+                            fontSize: 15,
+                            cursor: "pointer",
+                            ":hover": { fontWeight: 600 },
+                            ml: 1,
+                          }}
+                        >
+                          Add to Cart
+                        </Typography>
+                      </Box>
+                    )}
                   </Box>
                   <Box>
                     <ClearIcon
@@ -123,25 +139,40 @@ const WishList = () => {
                       <Typography sx={{ fontWeight: 600, mb: "10%" }}>
                         One Size
                       </Typography>
-                      <Box
-                        onClick={() => {
-                          addProductToCart(row.item);
-                          deleteWishProduct(row.item.id);
-                        }}
-                        sx={{ display: "flex", mt: 3 }}
-                      >
-                        <LocalMallOutlinedIcon />
-                        <Typography
-                          sx={{
-                            fontSize: 15,
-                            ml: 1,
-                            cursor: "pointer",
-                            ":hover": { fontWeight: 600 },
+                      {checkProductInCart(row.item.id) ? (
+                        <Box sx={{ display: "flex", mt: 3 }}>
+                          <LocalMallIcon />
+                          <Typography
+                            sx={{
+                              cursor: "default",
+                              fontSize: 15,
+                              fontWeight: 600,
+                              ml: 1,
+                            }}
+                          >
+                            In Your Cart
+                          </Typography>
+                        </Box>
+                      ) : (
+                        <Box
+                          onClick={() => {
+                            addProductToCart(row.item);
                           }}
+                          sx={{ display: "flex", mt: 3 }}
                         >
-                          Add to Cart
-                        </Typography>
-                      </Box>
+                          <LocalMallOutlinedIcon />
+                          <Typography
+                            sx={{
+                              fontSize: 15,
+                              cursor: "pointer",
+                              ":hover": { fontWeight: 600 },
+                              ml: 1,
+                            }}
+                          >
+                            Add to Cart
+                          </Typography>
+                        </Box>
+                      )}
                     </Box>
                   </Box>
                 </Box>

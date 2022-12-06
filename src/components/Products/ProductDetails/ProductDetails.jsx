@@ -6,6 +6,8 @@ import { useCart } from "../../../contexts/CartContext";
 import { useProducts } from "../../../contexts/ProductContextProvider";
 import { useWishlist } from "../../../contexts/WishlistContext";
 import { ADMIN } from "../../../helpers/consts";
+import ZoomImage from "../../ZoomImage/ZoomImage";
+import Comments from "./Comments";
 
 const ProductDetails = () => {
   const navigate = useNavigate();
@@ -26,11 +28,11 @@ const ProductDetails = () => {
       <Box
         sx={{
           display: "flex",
-          width: { xs: "100%", md: "60%" },
+          width: { xs: "100%", md: "70%" },
           alignItems: "center",
         }}
       >
-        <img width="50%" src={productDetails.img1} alt="" />
+        <ZoomImage picture={productDetails.img1} />
 
         <img width="50%" src={productDetails.img2} alt="" />
       </Box>
@@ -137,6 +139,7 @@ const ProductDetails = () => {
           )}
         </Box>
       </Box>
+   
     </Box>
   );
 };

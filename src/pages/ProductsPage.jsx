@@ -48,7 +48,7 @@ const ProductsPage = () => {
     <Box
       sx={{
         m: { xs: 1, sm: 5 },
-        mt: 0,
+        mt: {xs:3, sm:5},
         p: 4,
         px: { xs: 3, sm: 4 },
         pt: 8,

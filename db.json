@@ -11,16 +11,6 @@
       "id": 1
     },
     {
-      "title": "Balenciaga",
-      "description": "Le Cagole graffiti shoulder bag",
-      "price": "2700",
-      "type": "bags",
-      "img1": "https://cdn-images.farfetch-contents.com/18/36/76/94/18367694_41054741_1000.jpg",
-      "img2": "https://cdn-images.farfetch-contents.com/18/36/76/94/18367694_40457590_1000.jpg",
-      "comments": [],
-      "id": 2
-    },
-    {
       "title": "KHAITE",
       "description": "The Leon high-rise trousers",
       "price": 4066,
@@ -41,16 +31,6 @@
       "id": 4
     },
     {
-      "title": "GANNI",
-      "description": "spread-collar denim jacket",
-      "price": 321,
-      "type": "clothing",
-      "img1": "https://cdn-images.farfetch-contents.com/19/34/75/54/19347554_42661806_1000.jpg",
-      "img2": "https://cdn-images.farfetch-contents.com/19/34/75/54/19347554_42661815_1000.jpg",
-      "comments": [],
-      "id": 5
-    },
-    {
       "title": "Swarovski",
       "description": "Lucent geometric hoops",
       "price": 380,
@@ -69,16 +49,6 @@
       "img2": "https://cdn-images.farfetch-contents.com/19/20/08/55/19200855_42136743_1000.jpg",
       "comments": [],
       "id": 7
-    },
-    {
-      "title": "Amina Muaddi",
-      "description": "Gilda 110mm zebra-print sandals",
-      "price": 963,
-      "type": "shoes",
-      "img1": "https://cdn-images.farfetch-contents.com/17/91/58/71/17915871_41873427_1000.jpg",
-      "img2": "https://cdn-images.farfetch-contents.com/17/91/58/71/17915871_41876078_1000.jpg",
-      "comments": [],
-      "id": 8
     },
     {
       "title": "Dion Lee",
@@ -269,6 +239,56 @@
       "img2": "https://cdn-images.farfetch-contents.com/19/20/52/13/19205213_42112765_1000.jpg",
       "comments": [],
       "id": 27
+    },
+    {
+      "title": "MACH & MACH",
+      "description": "95mm bow-detail leather pumps",
+      "price": 852,
+      "type": "shoes",
+      "img1": "https://cdn-images.farfetch-contents.com/18/91/56/34/18915634_41241166_1000.jpg",
+      "img2": "https://cdn-images.farfetch-contents.com/18/91/56/34/18915634_41243292_1000.jpg",
+      "comments": [],
+      "id": 28
+    },
+    {
+      "title": "MACH & MACH",
+      "description": "feather-detail 95mm sandals",
+      "price": 1278,
+      "type": "shoes",
+      "img1": "https://cdn-images.farfetch-contents.com/18/64/33/06/18643306_42120551_1000.jpg",
+      "img2": "https://cdn-images.farfetch-contents.com/18/64/33/06/18643306_42122385_1000.jpg",
+      "comments": [],
+      "id": 29
+    },
+    {
+      "title": "MACH & MACH",
+      "description": "100mm pearl-embellished leather sandals",
+      "price": 1116,
+      "type": "shoes",
+      "img1": "https://cdn-images.farfetch-contents.com/18/91/71/86/18917186_41242028_1000.jpg",
+      "img2": "https://cdn-images.farfetch-contents.com/18/91/71/86/18917186_41238811_1000.jpg",
+      "comments": [],
+      "id": 30
+    },
+    {
+      "title": "MACH & MACH",
+      "description": "Double Bow 100mm pumps",
+      "price": 1029,
+      "type": "shoes",
+      "img1": "https://cdn-images.farfetch-contents.com/18/99/97/80/18999780_41826152_1000.jpg",
+      "img2": "https://cdn-images.farfetch-contents.com/18/99/97/80/18999780_41826153_1000.jpg",
+      "comments": [],
+      "id": 31
+    },
+    {
+      "title": "Jimmy Choo",
+      "description": "Marta 90mm crystal-buckle mules",
+      "price": 448,
+      "type": "shoes",
+      "img1": "https://cdn-images.farfetch-contents.com/16/77/30/77/16773077_33886214_1000.jpg",
+      "img2": "https://cdn-images.farfetch-contents.com/16/77/30/77/16773077_33885709_1000.jpg",
+      "comments": [],
+      "id": 32
     }
   ]
 }
