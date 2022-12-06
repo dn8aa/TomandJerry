@@ -24,26 +24,36 @@ const Comments = () => {
     return date;
   };
 
-  getDate();
+  // getDate();
 
   const { productDetails, getProductDetails, saveEditedProduct } =
     useProducts();
+
   const [product, setProduct] = useState(productDetails);
 
   const { id } = useParams();
+
   useEffect(() => {
     getProductDetails(id);
   }, []);
+
+// console.log(getProductDetails(id))
 
   useEffect(() => {
     setProduct(productDetails);
   }, [productDetails]);
 
+  // console.log(productDetails)
+
+
+
   const [input, setInput] = useState("");
 
   const handleInput = (e) => {
     setInput(e.target.value);
-  };
+  }; 
+
+
 
   function handleComment() {
     // console.log(product)
@@ -53,17 +63,16 @@ const Comments = () => {
       user: email,
     };
 
-    // console.log(product.comments);
-
-    // console.log(product.comments.concat([obj]));
+    
 
     let obj2 = {
       ...product,
     };
+
+
     obj2.comments.push(obj);
 
     setProduct(obj2);
-    // console.log(product);
   }
 
   function deleteComment(index) {
@@ -98,7 +107,7 @@ const Comments = () => {
         }}
       >
         <input
-        placeholder="leave your review"
+          placeholder="leave your review"
           className="comminput"
           value={input}
           type="text"
