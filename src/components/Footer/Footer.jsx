@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <Box className="footer" sx={{ marginBotton: "30%" }}>
+    <Box className="footer" sx={{ paddingBotton: "30%" }}>
       <Box className="the_left_footer">
         <h4>FARFETCH APP</h4>
         <Typography>Farfetch App for iOS and Android</Typography>
