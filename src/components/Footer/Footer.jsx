@@ -18,6 +18,7 @@ const Footer = () => {
       </Box>
       <Box className="the_center_footer">
         <h4>DESTINATION/REGION, CURRENCY AND LANGUAGE</h4>
+        {/* dskljfaksjf */}
         {/* <img src="" alt="" /> */}
         <Typography>Kyrgyzstan, USD $</Typography>
         <h4>FOLLOW US</h4>
