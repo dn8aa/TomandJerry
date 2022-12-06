@@ -22,9 +22,11 @@ const EditProduct = () => {
   }, [productDetails]);
 
   const handleInp = (e) => {
+
     let obj = { ...product, [e.target.name]: e.target.value };
     setProduct(obj);
   };
+
   return (
     <Box sx={{ mt: 10, width: { xs: "90%", md: "50%", lg: "30%" } }}>
       <TextField

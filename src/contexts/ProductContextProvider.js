@@ -55,6 +55,7 @@ const ProductContextProvider = ({ children }) => {
   }
 
   async function saveEditedProduct(newProduct, id) {
+    console.log(newProduct, "NEW")
     await axios.patch(`${JSON_API_PRODUCTS}/${id}`, newProduct);
     getProducts();
   }
