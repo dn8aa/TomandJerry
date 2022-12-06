@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useReducer, useState } from "react";
 import { CART, WISH } from "../helpers/consts";
 import { getCountWishesInCart } from "../helpers/functions";
-import CartContextProvider from "./CartContext";
+import CartContextProvider, { useCart } from "./CartContext";
 const wishlistContext = createContext();
 export const useWishlist = () => useContext(wishlistContext);
 
@@ -68,6 +68,7 @@ const WishlistContextProvider = ({ children }) => {
       type: WISH.GET_WISH,
       payload: wish,
     });
+
   };
 
   const changeProductCountWish = (count, id) => {
@@ -110,6 +111,7 @@ const WishlistContextProvider = ({ children }) => {
   const [favoriteHover, setFavoriteHover] = useState("");
 
   const values = {
+    
     addProductToWish,
     changeProductCountWish,
     checkProductInWish,
@@ -118,6 +120,7 @@ const WishlistContextProvider = ({ children }) => {
     deleteWishProduct,
     favoriteHover,
     setFavoriteHover,
+    wishCount: state.wish.products.length,
   };
   return (
     <wishlistContext.Provider value={values}>

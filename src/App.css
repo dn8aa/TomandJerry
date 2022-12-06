@@ -59,6 +59,11 @@ h1 {
   color: #282c34;
 }
 
+/* .comminput {
+  border-radius: 20px;
+  overflow:visible;
+  height
+} */
 @media screen and (max-width: 600px) {
   .desktop-details {
     display: none;

@@ -19,12 +19,16 @@ import LocalMallOutlinedIcon from "@mui/icons-material/LocalMallOutlined";
 import { useNavigate } from "react-router-dom";
 import { useProducts } from "../../contexts/ProductContextProvider";
 import { useAuth } from "../../contexts/AuthContext";
-import { TextField } from "@mui/material";
+import { Badge, TextField } from "@mui/material";
 import { ADMIN } from "../../helpers/consts";
+import { useCart } from "../../contexts/CartContext";
+import { useWishlist } from "../../contexts/WishlistContext";
 
 const drawerWidth = 240;
 
 function Navbar(props) {
+  const { count } = useCart();
+  const { wishCount } = useWishlist();
   const { auth, setAuth } = useAuth();
   const {
     user: { email },
@@ -86,24 +90,65 @@ function Navbar(props) {
             display: "flex",
             justifyContent: "space-around",
             alignItems: "center",
+            mt:1
           }}
         >
           {" "}
-          <PersonOutlineOutlinedIcon
-            onClick={() => {
-              setAuth(!auth);
-              handleLogout();
-            }}
-            sx={{ cursor: "pointer" }}
-          />
-          <FavoriteBorderOutlinedIcon
-            onClick={() => navigate("/wishlist")}
-            sx={{ cursor: "pointer" }}
-          />
-          <LocalMallOutlinedIcon
-            onClick={() => navigate("/cart")}
-            sx={{ cursor: "pointer" }}
-          />
+          {email ? (
+            <PersonOutlineOutlinedIcon
+              onClick={() => {
+                setAuth(!auth);
+                handleLogout();
+              }}
+              sx={{
+              
+
+                padding: 1,
+                cursor: "pointer",
+                ":hover": {
+                  backgroundColor: "white",
+                  border: "1px solid red",
+                  borderRadius: "50%",
+                  padding: 1,
+                  color: "red",
+                  boxShadow: "none",
+                },
+              }}
+            />
+          ) : (
+            <PersonOutlineOutlinedIcon
+              onClick={() => {
+                setAuth(!auth);
+                handleLogout();
+              }}
+              sx={{
+                
+
+                padding: 1,
+                cursor: "pointer",
+                ":hover": {
+                  backgroundColor: "white",
+                  border: "1px solid green",
+                  borderRadius: "50%",
+                  padding: 1,
+                  color: "green",
+                  boxShadow: "none",
+                },
+              }}
+            />
+          )}
+          <Badge badgeContent={wishCount} color="error">
+            <FavoriteBorderOutlinedIcon
+              onClick={() => navigate("/wishlist")}
+              sx={{ cursor: "pointer", width: "40px" }}
+            />
+          </Badge>
+          <Badge badgeContent={count} color="error">
+            <LocalMallOutlinedIcon
+              onClick={() => navigate("/cart")}
+              sx={{ ml: 1, cursor: "pointer", width: "40px" }}
+            />
+          </Badge>
         </Box>
       </List>
     </Box>
@@ -235,14 +280,18 @@ function Navbar(props) {
               />
             )}
 
-            <FavoriteBorderOutlinedIcon
-              onClick={() => navigate("/wishlist")}
-              sx={{ m: 1, cursor: "pointer", p: 1 }}
-            />
-            <LocalMallOutlinedIcon
-              onClick={() => navigate("/cart")}
-              sx={{ m: 1, cursor: "pointer", p: 1 }}
-            />
+            <Badge badgeContent={wishCount} color="error">
+              <FavoriteBorderOutlinedIcon
+                onClick={() => navigate("/wishlist")}
+                sx={{ cursor: "pointer", width: "40px" }}
+              />
+            </Badge>
+            <Badge badgeContent={count} color="error">
+              <LocalMallOutlinedIcon
+                onClick={() => navigate("/cart")}
+                sx={{ ml: 1, cursor: "pointer", width: "40px" }}
+              />
+            </Badge>
           </Box>
         </Toolbar>
       </AppBar>
