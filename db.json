@@ -7,7 +7,13 @@
       "type": "shoes",
       "img1": "https://cdn-images.farfetch-contents.com/18/64/33/08/18643308_41640965_1000.jpg",
       "img2": "https://cdn-images.farfetch-contents.com/18/64/33/08/18643308_41641869_1000.jpg",
-      "comments": [],
+      "comments": [
+        {
+          "comment": "hello",
+          "date": "7.11.2022",
+          "user": "admin@gmail.com"
+        }
+      ],
       "id": 1
     },
     {
@@ -17,7 +23,12 @@
       "type": "clothing",
       "img1": "https://cdn-images.farfetch-contents.com/18/88/54/82/18885482_42613952_1000.jpg",
       "img2": "https://cdn-images.farfetch-contents.com/18/88/54/82/18885482_42613954_1000.jpg",
-      "comments": [],
+      "comments": [
+        {
+          "comment": "hhhhhhh",
+          "date": "7.11.2022"
+        }
+      ],
       "id": 3
     },
     {
@@ -27,7 +38,13 @@
       "type": "jewelry",
       "img1": "https://cdn-images.farfetch-contents.com/19/15/64/65/19156465_42305694_1000.jpg",
       "img2": "https://cdn-images.farfetch-contents.com/19/15/64/65/19156465_42306166_1000.jpg",
-      "comments": [],
+      "comments": [
+        {
+          "comment": "вааваа",
+          "date": "7.11.2022",
+          "user": "admin@gmail.com"
+        }
+      ],
       "id": 4
     },
     {
@@ -37,7 +54,13 @@
       "type": "jewelry",
       "img1": "https://cdn-images.farfetch-contents.com/17/20/39/60/17203960_37957505_1000.jpg",
       "img2": "https://cdn-images.farfetch-contents.com/17/20/39/60/17203960_37957506_1000.jpg",
-      "comments": [],
+      "comments": [
+        {
+          "comment": "почему так дорого? ",
+          "date": "7.11.2022",
+          "user": "admin@gmail.com"
+        }
+      ],
       "id": 6
     },
     {
@@ -289,6 +312,16 @@
       "img2": "https://cdn-images.farfetch-contents.com/16/77/30/77/16773077_33885709_1000.jpg",
       "comments": [],
       "id": 32
+    },
+    {
+      "title": "hhjj",
+      "description": "jhjjj",
+      "price": null,
+      "type": "nnnnnnnnnn",
+      "img1": "https://cdn-images.farfetch-contents.com/18/91/56/34/18915634_41241166_1000.jpg",
+      "img2": "https://cdn-images.farfetch-contents.com/18/91/56/34/18915634_41241166_1000.jpg",
+      "comments": [],
+      "id": 33
     }
   ]
 }

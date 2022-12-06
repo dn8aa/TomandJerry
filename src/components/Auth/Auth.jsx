@@ -1,3 +1,5 @@
+import CloseIcon from "@mui/icons-material/Close";
+
 import React from "react";
 import {
   Box,
@@ -47,13 +49,13 @@ const Auth = () => {
     >
       <Box
         sx={{
-          width: "30%",
+          width: { xs: "90%", sm: "80%", md: "50%", lg: "30%" },
           height: "fit-content",
           backgroundColor: "white",
           borderRadius: "20px",
           display: "flex",
           flexDirection: "column",
-          padding: 5,
+          padding: { xs: 2, sm: 5 },
           boxSizing: "border-box",
         }}
       >
@@ -61,30 +63,34 @@ const Auth = () => {
           sx={{
             display: "flex",
             justifyContent: "space-between",
+            flexDirection: "column",
             // margin: "16%",
           }}
         >
+          <Box sx={{ display: "flex", justifyContent: "flex-end" }}>
+            {" "}
+            <CloseIcon
+              onClick={() => setAuth(!auth)}
+              sx={{ cursor: "pointer" }}
+            />
+          </Box>
           <Typography
             variant="h4"
             sx={{
               textAlign: "center",
               marginLeft: "7%",
-              position: "absolute",
+
               fontSize: "30px",
             }}
           >
             Sign In
           </Typography>
-          <Typography
-            onClick={() => setAuth(!auth)}
-            sx={{ cursor: "pointer" }}
-          ></Typography>
 
           <Box
             component="form"
             onSubmit={handleSubmit}
             noValidate
-            sx={{ width: "100%", margin: "4%", mt: "20%" }}
+            sx={{ width: "90%", margin: "4%", mt: "5%" }}
           >
             <Typography
               sx={{
@@ -99,7 +105,7 @@ const Auth = () => {
             <TextField
               className="input-email"
               required
-              fullWidth
+              sx={{ width: "100%" }}
               id="email"
               name="email"
               autoComplete="email"
@@ -158,7 +164,7 @@ const Auth = () => {
                 </Typography>
               </Box>
               <Link
-                className="links"
+                className="auth-link"
                 sx={{
                   mt: 1,
                   fontSize: 15,
@@ -178,10 +184,21 @@ const Auth = () => {
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 3, mb: 2, fontWeight: 600 }}
+                sx={{
+                  mt: 3,
+                  mb: 2,
+                  fontWeight: 600,
+                  backgroundColor: "black",
+                  ":hover": {
+                    backgroundColor: "white",
+                    border: "1px solid green",
+                    color: "green",
+                    boxShadow: "none",
+                  },
+                }}
                 onClick={() => {
                   handleLogin();
-                  Navigate("/");
+                  setAuth(!auth);
                 }}
               >
                 Sign in
@@ -191,9 +208,23 @@ const Auth = () => {
                 className="button_register"
                 type="submit"
                 fullWidth
-                variant="outlined"
-                sx={{ mt: 3, mb: 2, fontWeight: 600, backgroundColor: "black" }}
-                onClick={handleSignup}
+                variant="contained"
+                sx={{
+                  mt: 3,
+                  mb: 2,
+                  fontWeight: 600,
+                  backgroundColor: "black",
+                  ":hover": {
+                    backgroundColor: "white",
+                    border: "1px solid green",
+                    color: "green",
+                    boxShadow: "none",
+                  },
+                }}
+                onClick={() => {
+                  setAuth(!auth);
+                  handleSignup();
+                }}
               >
                 Register
               </Button>
@@ -209,8 +240,7 @@ const Auth = () => {
               <Grid item>
                 {hasAccount ? (
                   <Link
-                    className="links"
-                    sx={{ color: "black" }}
+                    className="auth-link"
                     href="#"
                     variant="body2"
                     onClick={() => setHasAccount(!hasAccount)}
@@ -219,8 +249,7 @@ const Auth = () => {
                   </Link>
                 ) : (
                   <Link
-                    className="links"
-                    sx={{ color: "black" }}
+                    className="auth-link"
                     href="#"
                     variant="body2"
                     onClick={() => setHasAccount(!hasAccount)}
