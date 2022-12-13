@@ -35,7 +35,7 @@ const Cart = () => {
     >
       <table>
         <tbody>
-          {cart.products.map((row, i) => (
+          {cart?.products.map((row, i) => (
             <tr className="row" key={i}>
               <td className="desktop-details" width={"17%"}>
                 <img width={"90%"} src={row.item.img1} alt="" />

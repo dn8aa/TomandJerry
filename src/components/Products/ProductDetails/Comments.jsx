@@ -63,7 +63,7 @@ const Comments = () => {
       user: email,
     };
 
-    
+
 
     let obj2 = {
       ...product,
@@ -148,6 +148,7 @@ const Comments = () => {
               // justifyContent: "flex-start",
               border: "1px solid lightgrey",
               p: 3,
+              
               borderRadius: "20px",
             }}
           >
@@ -164,6 +165,8 @@ const Comments = () => {
                   mt: 2,
                   backgroundColor: "black",
                   ":hover": {
+
+
                     backgroundColor: "white",
                     border: "1px solid red",
                     color: "red",

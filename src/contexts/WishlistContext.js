@@ -120,7 +120,6 @@ const WishlistContextProvider = ({ children }) => {
     deleteWishProduct,
     favoriteHover,
     setFavoriteHover,
-    wishCount: state.wish.products.length,
   };
   return (
     <wishlistContext.Provider value={values}>

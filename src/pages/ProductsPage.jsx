@@ -6,10 +6,6 @@ import ProductList from "../components/Products/ProductList";
 import ProductPagination from "../components/Products/ProductPagination";
 import ProductSort from "../components/Products/ProductSort";
 import { useProducts } from "../contexts/ProductContextProvider";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
-import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-
 import SearchIcon from "@mui/icons-material/Search";
 
 const ProductsPage = () => {
@@ -48,7 +44,7 @@ const ProductsPage = () => {
     <Box
       sx={{
         m: { xs: 1, sm: 5 },
-        mt: {xs:3, sm:5},
+        mt: { xs: 3, sm: 5 },
         p: 4,
         px: { xs: 3, sm: 4 },
         pt: 8,

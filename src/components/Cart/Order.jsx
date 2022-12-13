@@ -5,7 +5,7 @@ import { useCart } from "../../contexts/CartContext";
 
 const Order = () => {
   const { cart } = useCart();
-  const promotion = 124.4;
+  // const promotion = 124.4;
   const navigate = useNavigate();
   return (
     <Box
@@ -19,13 +19,13 @@ const Order = () => {
       <Typography sx={{ fontWeight: 600, fontSize: 18 }}>Summary</Typography>
       <Box sx={{ display: "flex", justifyContent: "space-between", mt: 2 }}>
         <Typography>Subtotal</Typography>
-        <Typography>${cart.totalPrice}</Typography>
+        <Typography>{cart ? `${cart.totalPrice}` : <></>}</Typography>
       </Box>
       <Box sx={{ mt: 1, display: "flex", justifyContent: "space-between" }}>
         <Typography>Delivery</Typography>
         <Typography>$0</Typography>
       </Box>
-      <Box
+      {/* <Box
         sx={{
           mt: 1,
           display: "flex",
@@ -36,13 +36,13 @@ const Order = () => {
       >
         <Typography>Promotions</Typography>
         <Typography>-${promotion}</Typography>
-      </Box>
+      </Box> */}
       <Box sx={{ mt: 2, display: "flex", justifyContent: "space-between" }}>
         <Typography>Total</Typography>
 
         <Typography sx={{ fontWeight: 600 }}>
           {" "}
-          ${cart.totalPrice - promotion}
+          {cart ? `${cart.totalPrice}` : <></>}
         </Typography>
       </Box>
 
