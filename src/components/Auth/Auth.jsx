@@ -271,13 +271,6 @@ const Auth = () => {
           }}
           id="line"
         ></Box>
-
-        {/* <TextField sx={{ mt: 2 }} /> */}
-        {/* <TextField sx={{ mt: 2 }} /> */}
-        {/* <Button onClick={() => setAuth(!auth)} sx={{ mt: 2, p: 2 }}> */}
-        {/* {" "} */}
-        {/* Sign In */}
-        {/* </Button> */}
       </Box>
     </Box>
   );

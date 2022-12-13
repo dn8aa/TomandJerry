@@ -18,7 +18,6 @@ import WIshListPage from "../pages/WIshListPage";
 const MainRoutes = () => {
   const PUBLIC_ROUTES = [
     { link: "/auth", element: <AuthPage />, id: 2 },
-
     { link: "/", element: <HomePage />, id: 1 },
     { link: "/products", element: <ProductsPage />, id: 3 },
     { link: "/products/:id", element: <ProductsDetailsPage />, id: 4 },
@@ -30,6 +29,7 @@ const MainRoutes = () => {
     { link: "/wishlist", element: <WIshListPage />, id: 11 },
     { link: "/checkout", element: <CheckoutPage />, id: 12 },
   ];
+
   return (
     <>
       <Routes>

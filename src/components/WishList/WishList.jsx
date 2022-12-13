@@ -31,7 +31,7 @@ const WishList = () => {
     >
       <table>
         <tbody>
-          {wish.products.map((row, i) => (
+          {wish?.products.map((row, i) => (
             <tr className="row" key={i}>
               <td className="desktop-details" width={"17%"}>
                 <img width={"90%"} src={row.item.img1} alt="" />

@@ -138,7 +138,6 @@ const CartContextProvider = ({ children }) => {
     checkProductInCart,
     counter,
     setCounter,
-    count: state.cart.products.length,
   };
 
   return <cartContext.Provider value={values}>{children}</cartContext.Provider>;

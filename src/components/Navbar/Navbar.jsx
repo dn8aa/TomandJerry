@@ -137,18 +137,16 @@ function Navbar(props) {
               }}
             />
           )}
-          <Badge badgeContent={wishCount} color="error">
             <FavoriteBorderOutlinedIcon
               onClick={() => navigate("/wishlist")}
               sx={{ cursor: "pointer", width: "40px" }}
             />
-          </Badge>
-          <Badge badgeContent={count} color="error">
+          
             <LocalMallOutlinedIcon
               onClick={() => navigate("/cart")}
               sx={{ ml: 1, cursor: "pointer", width: "40px" }}
             />
-          </Badge>
+          
         </Box>
       </List>
     </Box>
